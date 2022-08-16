@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // $role = null;
+    // if (Auth::check()) {
+    //     $role = Auth::user()->role()->first()->name;
+    // } else {
+    //     return view('auth.login');
+    // }
+    // if ($role == 'teacher') {
+    //     return redirect('/teacher/cabinet');
+    // } elseif ($role == 'student') {
+    //     return 'Кабинет студента';
+    // }else{
+    //     return view('auth.login');
+    // }
+    return "Index";
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
