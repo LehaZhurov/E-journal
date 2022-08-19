@@ -17,6 +17,9 @@ class Teacher
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         foreach (Auth::user()->roles as $role){
             if($role->name == 'teacher'){
                 return $next($request);

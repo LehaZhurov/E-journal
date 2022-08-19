@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TeacherController;
 
+Route::get('/cabinet', [TeacherController::class, 'index'])->name('teacher.cabinet');
+Route::post('/create/rating', [TeacherController::class, 'createRating'])->name('teacher.createRating');
+Route::post('/get/rating', [TeacherController::class, 'getRating'])->name('teacher.getRating');
 
-    Route::get('/cabinet', function () {
-        
-    });    

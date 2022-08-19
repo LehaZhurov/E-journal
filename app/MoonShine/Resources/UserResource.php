@@ -11,6 +11,7 @@ use Leeto\MoonShine\Fields\Email;
 use Leeto\MoonShine\Fields\Password;
 use Leeto\MoonShine\Fields\PasswordRepeat;
 use Leeto\MoonShine\Fields\BelongsToMany;
+use Leeto\MoonShine\Fields\BelongsTo;
 
 
 class UserResource extends Resource
@@ -23,7 +24,8 @@ class UserResource extends Resource
 	{
 		return [
             Text::make('ФИО','name')->sortable(),
-            BelongsToMany::make('Роль', 'role', 'name'),
+            BelongsToMany::make('Роль', 'roles', 'name'),
+            BelongsTo::make('группа', 'group', 'name')->sortable(),
             Email::make('e-mail','email')->sortable(),
             Password::make('Пароль','password')->hideOnIndex(),
             PasswordRepeat::make('Повторите пароль','repeat_password')->hideOnIndex(),

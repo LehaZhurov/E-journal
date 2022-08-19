@@ -3,8 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Group;
-
+use App\Models\User;
+use App\Models\Subject;
 return new class extends Migration
 {
     /**
@@ -14,14 +14,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->foreignIdFor(Group::class);
-            $table->rememberToken();
+            $table->integer('value');
+            $table->string('num_day');
+            $table->string('month_day');
+            $table->string('year');
+            $table->foreignId('student_id');
+            $table->foreignId('teacher_id');
+            $table->foreignIdFor(Subject::class);   
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('ratings');
     }
 };

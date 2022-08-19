@@ -10,6 +10,7 @@ use Leeto\MoonShine\Resources\MoonShineUserResource;
 use Leeto\MoonShine\Resources\MoonShineUserRoleResource;
 use App\MoonShine\Resources\UserResource;
 use App\MoonShine\Resources\RoleResource;
+use App\MoonShine\Resources\GroupResource;
 
 
 class MoonShineProvider extends ServiceProvider
@@ -38,6 +39,7 @@ class MoonShineProvider extends ServiceProvider
             // MoonShineUserRoleResource::class, // Системный раздел с ролями администраторов
             UserResource::class, // Ресурс для работы с пользователями из админ панели
             RoleResource::class, // Ресурс для работы с ролями пользователей из админ панели
+            GroupResource::class, // Ресурс для работы с группами пользователей из админ панели
         ]);
     }
 }

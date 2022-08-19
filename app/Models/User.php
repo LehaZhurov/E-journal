@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
+use App\Models\Group;
+use App\Models\Subject;
+
 
 class User extends Authenticatable
 {
-    use HasFactory;
-    use Notifiable;
+    use HasFactory,Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -59,5 +61,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function group(){
+        return $this->belongsTo(Group::class);
+
+    }
+
+    public function subjects(){
+        return $this->belongsToMany(Subject::class);
+    }
     
 }

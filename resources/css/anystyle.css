@@ -1,0 +1,26 @@
+:root{
+    --txt-color-white:white;
+    --bg-green:#198754;
+}
+body {
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+        -23px 0 20px -23px rgba(0, 0, 0, .8),
+        23px 0 20px -23px rgba(0, 0, 0, .8),
+        0 0 40px rgba(0, 0, 0, .1) inset;
+    min-height: 900px;
+    background-color:var(--red);
+}
+.tx-white{
+    color:var(--bs-navbar-active-color);
+}
+.bg-green{
+    background-color:var(--bg-green)
+}
+.active{
+    background-color:var(--bg-green);
+    color:var(--txt-color-white);
+}
+a{
+    color:var(--txt-color-white);
+}
