@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
 use App\Models\Group;
 use App\Models\Subject;
-
+use App\Models\Rating;
 
 class User extends Authenticatable
 {
@@ -70,4 +70,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Subject::class);
     }
     
+    public function ratings(){
+        return $this->hasMany(Rating::class,'student_id');
+    }
 }

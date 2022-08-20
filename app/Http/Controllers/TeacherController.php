@@ -19,7 +19,8 @@ class TeacherController extends Controller
 
     public function getRating(GetRatingRequest $request)
     {
-        $rating = GetRatingRequest::get($request->all());
+        $rating = GetRatingQuery::get($request->all());
+        
         dd($rating);
     }
 }

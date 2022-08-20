@@ -1,6 +1,7 @@
 <div class="container_fluid journal">
     <h2>Журнал</h2>
     <form action="#" id='journal_form'>
+		@csrf
         <div id="header_form" class = 'd-flex align-items-center'>
             <label for="group_select_journal">Группа:</label>
             <select name="group" id="group_select_journal">
@@ -36,6 +37,13 @@
 				<label for="days_select_journal">День:</label>
                 <select name="day" id="days_select_journal">
                     <option value="01">Выбирите месяц</option>
+                </select>
+				<select name="year" id="years_select_journal">
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
                 </select>
             </div>
         </div>

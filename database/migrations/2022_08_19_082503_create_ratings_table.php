@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->integer('value');
             $table->string('num_day');
-            $table->string('month_day');
+            $table->string('num_month');
             $table->string('year');
             $table->foreignId('student_id');
             $table->foreignId('teacher_id');
