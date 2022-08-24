@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
     <title>E-journal</title>
   </head>
 
@@ -51,54 +51,8 @@
             </div>
           </div>
     </div>
-
-
-    {{-- {{-- <nav class="nav-extended  green darken-1">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">E-journal</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i
-                    class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#"> {{ Auth::user()->name }}</a></li>
-                <li><a href="collapsible.html">Настройки</a></li>
-                <li><a href="/logout">
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                                {{ __('Выйти') }}
-                            </x-dropdown-link>
-                        </form>
-                    </a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
-        </div>
-        {{-- <div class="nav-content">
-            <ul class="tabs tabs-transparent">
-                {{-- <li class="tab"><a class="active" href="#test1">Журнал</a></li> 
-                <li class="tab"><a href="#test2">Группы</a></li>
-                <li class="tab"><a href="#test3">Предметы</a></li>
-            </ul>
-        </div>
-    </nav> --}} 
-    {{-- <div id="test1" class="col s12">
-        @include('teacher.components.table')
-    </div>
-    <div id="test2" class="col s12">
-        @include('teacher.components.group')
-    </div>
-    <div id="test3" class="col s12"> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    @vite(['resources/js/journalform/appenddayinform.js']),
-    @vite(['resources/js/SendRequest.js']),
-    @vite(['resources/js/journalform/getrating.js']),
-
+    @vite(['resources/js/app.js']);
 </body>
 
 </html>

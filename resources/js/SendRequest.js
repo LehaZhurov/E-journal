@@ -31,3 +31,5 @@ export function SendRequest(method,url,body = null){
 		xhr.send(body);
 	});
 }
+
+

@@ -16,6 +16,7 @@ class GetRatingQuery
         $users
             ->join('ratings', 'ratings.student_id', '=', 'users.id')
             ->where('ratings.subject_id', $param['subject'])
+            ->orderBy('ratings.num_day')
             ->select('users.name as user_name', 'users.id as user_id', 'ratings.*');
         $users = $users->get();
         $userRatings = [];
@@ -28,7 +29,7 @@ class GetRatingQuery
                 'value' => $user->value,
                 'num_day' => $user->num_day,
                 'num_month' => $user->num_month,
-                'year' => $user->num_month,
+                'year' => $user->year,
                 'subject_id' => $user->subject_id,
                 'teacher_id' => $user->teacher_id,
             ]);
