@@ -3,6 +3,7 @@ let subject = document.querySelector('#subject_select_journal');
 let day = document.querySelector('#days_select_journal');
 let month = document.querySelector('#months_select_journal');
 let year = document.querySelector('#years_select_journal');
+let SaveData;
 import { SendRequest } from '../SendRequest.js';
 import { load } from '../load.js';
 import { AppendRating } from './createRating.js';
@@ -14,14 +15,14 @@ group.addEventListener("change", function () {
 subject.addEventListener("change", function () {
     getRating();
 });
-day.addEventListener("change", function () {
-    getRating();
-});
 month.addEventListener("change", function () {
     getRating();
 });
 year.addEventListener("change", function () {
     getRating();
+});
+day.addEventListener("change", function () {
+    AppendRating(SaveData);
 });
 function getRating() {
     let data_form = document.querySelector('#journal_form');
@@ -35,6 +36,7 @@ function getRating() {
 }
 
 function AppendRatingInPage(data) {
+    SaveData = data;
     let tableSize = 15;
     let journal = document.querySelector('#journal_table');//Блок таблицы
     journal.innerHTML = ' ';

@@ -23,43 +23,50 @@ class DatabaseSeeder extends Seeder
         $teachersCount = 10;
         $studentsCount = 30;
         $subjectsCount = 4;
-        //Создание предметов 
-        $subjects = Subject::factory()->count($subjectsCount)->create();
+        $studentGroupCount = 4;
         //Создание групп педагоги
         $teacherGroup = Group::factory()->state(['name' => 'Педагоги'])->create();
-        // $studentGroup = Group::factory()->create();
-        //Создание ролей
+        //Создание ролей педагоги
         $teacherRole = Role::factory()->state(['name' => 'teacher'])->create();
-        $studentRole = Role::factory()->state(['name' => 'student'])->create();
         //Создание педагогов
         $teachers = User::factory()
             ->count($teachersCount)
             ->for($teacherGroup)
             ->hasAttached($teacherRole)
-            ->hasAttached(Subject::factory()->count(4))
             ->create();
+        //Создание предметов 
+        $subjects = Subject::factory()
+            ->state([
+                'user_id' => $teachers[rand(0, $teachersCount - 1)]->id
+            ])->count($subjectsCount)->create();
+        //Создание группы студенты
+        $studentGroup = Group::factory()->count($studentGroupCount)->hasAttached($subjects)->create();
+        //Создание роли студент
+        $studentRole = Role::factory()->state(['name' => 'student'])->create();
         //Создание студентов
         $students = User::factory()
             ->count($studentsCount)
-            ->for(Group::factory()->hasAttached($subjects))
+            ->state([
+                'group_id' => $studentGroup[rand(0, $studentGroupCount - 1)]->id
+            ])
             ->hasAttached($studentRole)
             ->create();
+        //Создание оценок
+        for ($i = 0; $i < $studentsCount; $i++) {
+            Rating::factory()
+                ->count(10)
+                ->state([
+                    'teacher_id' => $teachers[rand(0, $teachersCount - 1)]->id,
+                    'student_id' => $students[rand(0, $studentsCount - 1)]->id,
+                    'subject_id' => $subjects[rand(0, $subjectsCount - 1)]->id
+                ])
+                ->create();
+        }
         // Создание администратора на время разработки
         MoonshineUser::query()->create([
             'email' => 'leha@mail.ru',
             'name' => 'leha',
             'password' => bcrypt('lehaleha')
         ]);
-        //Создание оценок
-        for ($i=0; $i < $studentsCount; $i++) { 
-            Rating::factory()
-            ->count(5)
-            ->state([
-                'teacher_id' => $teachers[rand(0,$teachersCount-1)]->id,
-                'student_id' => $students[rand(0,$studentsCount-1)]->id,
-                'subject_id' => $subjects[rand(0,$subjectsCount-1)]->id
-            ])
-            ->create();
-        }
     }
 }

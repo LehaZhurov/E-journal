@@ -40,9 +40,6 @@ a {
     color: var(--txt-color-white);
 }
 
-.tab-content {
-    width: 100%;
-}
 
 .accordion-button:focus {
     border-color: var(--bg-green);

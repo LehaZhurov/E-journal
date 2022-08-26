@@ -3,33 +3,28 @@
 namespace App\MoonShine\Resources;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Subject;
 use Leeto\MoonShine\Resources\Resource;
-use Leeto\MoonShine\Fields\ID;
 use Leeto\MoonShine\Fields\Text;
-use App\Models\Group;
-use Leeto\MoonShine\Fields\BelongsToMany;
-class GroupResource extends Resource
-{
-	public static string $model = Group::class;
+use Leeto\MoonShine\Fields\BelongsTo;
 
-	public static string $title = 'Группы';
+class SubjectResource extends Resource
+{
+	public static string $model = Subject::class;
+
+	public static string $title = 'Предметы';
 
 	public function fields(): array
 	{
 		return [
-            ID::make()->sortable(),
             Text::make('Название','name')->sortable(),
-            BelongsToMany::make('Предметы','subjects','name')->hideOnIndex(),
-            
+            BelongsTo::make('Переподователь','user','name')
         ];
 	}
 
 	public function rules(Model $item): array
 	{
-	    return [
-            'name' => ['required','string']
-        ];
+	    return [];
     }
 
     public function search(): array

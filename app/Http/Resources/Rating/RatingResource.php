@@ -3,8 +3,7 @@
 namespace App\Http\Resources\Rating;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Rating\RatingResource;
-class UserRatingsResource extends JsonResource
+class RatingResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,9 +14,13 @@ class UserRatingsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this['user']['id'],
-            'name' => $this['user']['name'],
-            'ratings'=>RatingResource::collection($this['ratings']),
+            'value' => $this->value,
+            'teacher_id' => $this->teacher_id,
+            'subject_id' => $this->subject_id,
+            'num_day' => $this->num_day,
+            'num_month' => $this->num_month,
+            'year' => $this->year
         ];
+
     }
 }

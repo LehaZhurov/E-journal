@@ -8,6 +8,7 @@ use App\Http\Queries\Group\GetGroupsQuery;
 use App\Http\Queries\Subject\GetSubjectTeacherQuery;
 use App\Http\Queries\Rating\GetRatingQuery;
 use App\Http\Resources\Rating\UserRatingsResource;
+use App\Models\User;
 class TeacherController extends Controller
 {
     public function index()

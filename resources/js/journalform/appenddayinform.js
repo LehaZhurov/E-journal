@@ -32,11 +32,11 @@ select_months.addEventListener("change", function(){
     }
     select_days.innerHTML = '';
     for(var i = 0; i <= num_day;i++){
-        i = i + 1
-        if(i < 10){
-            i = '0'+i;
+        let myI = i + 1
+        if(myI < 10){
+            myI = '0'+myI;
         }
-        select_days.innerHTML += '<option value="'+i+'">'+i+'</option>';
+        select_days.innerHTML += '<option value="'+myI+'">'+myI+'</option>';
     }
 
   });

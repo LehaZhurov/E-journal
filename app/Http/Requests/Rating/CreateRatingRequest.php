@@ -24,7 +24,13 @@ class CreateRatingRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'value' => ['required', 'int','min:2','max:5'],
+            'user_id' => ['required','int'],
+            'teacher_id' => [],
+            'subject_id' => ['required', 'int'],
+            'num_day' => ['required','string'],
+            'num_month' => ['required','string'],
+            'year' => ['required','string'],
         ];
     }
 }
