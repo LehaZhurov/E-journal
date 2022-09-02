@@ -8,7 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/js/journalform/appenddayinform.js',
-                'resources/js/journalform/createRating.js',
+                'resources/js/journalform/editRating.js',
             ],
             refresh: true,
         }),

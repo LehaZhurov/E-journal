@@ -3,22 +3,11 @@ export function SendRequest(method,url,body = null){
 	return new Promise ((resolve,reject)=>{
 		const xhr = new XMLHttpRequest();
 		xhr.open(method,url,true)
-		// xhr.responseType = 'json';
-		xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content )
 		xhr.withCredentials = true;
-		if(xhr.readyState == 0){
-			console.log(0);
-		}
+		xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content )
 		if(xhr.readyState == 1){
-			console.log(1);
+			console.log('Отправка запроса '+method+' запроса' + url);
 		}
-		if(xhr.readyState == 3){
-			console.log(3);
-		}
-		if(xhr.readyState == 4){
-			console.log(4);
-		}
-
 		xhr.onload = () =>{
 			if(xhr.status >= 400){
 				reject(xhr.response);

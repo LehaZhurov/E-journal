@@ -8,16 +8,15 @@
     --bg-green: #066137;
 }
 
-body {
+
+#work_obl{
     margin: 0px 20px 0px 20px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
         -23px 0 20px -23px rgba(0, 0, 0, .8),
         23px 0 20px -23px rgba(0, 0, 0, .8),
         0 0 40px rgba(0, 0, 0, .1) inset;
     min-height: 900px;
-    background-color: var(--red);
 }
-
 .tx-white {
     color: var(--bs-navbar-active-color);
 }
@@ -90,6 +89,11 @@ option:checked { color: black; }
 }
 .null_padding{
     padding: 0px;
+}
+#alertblock{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 @media screen and (max-width: 900px) {
     .scroll_journal{

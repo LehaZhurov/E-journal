@@ -2,10 +2,9 @@
 namespace App\Action\Rating;
 use App\Models\Rating;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Collection;
 class CreateRatingAction{
         
-    public static function execute(array $data) : Rating | Collection
+    public static function execute(array $data) : Rating 
     {
         $teacherId = Auth::user()->id;
         $rating = Rating::query()

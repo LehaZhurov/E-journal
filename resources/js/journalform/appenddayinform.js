@@ -1,8 +1,7 @@
 let select_months = document.querySelector('#months_select_journal');
 let select_days = document.querySelector('#days_select_journal');
 
-
-select_months.addEventListener("change", function(){
+function AppendDayMonth(){
     let value = select_months.value;
     let num_day = 0;
     if(value == '01'){
@@ -39,4 +38,8 @@ select_months.addEventListener("change", function(){
         select_days.innerHTML += '<option value="'+myI+'">'+myI+'</option>';
     }
 
-  });
+}
+select_months.addEventListener("change", function(){
+    AppendDayMonth();    
+});
+AppendDayMonth();

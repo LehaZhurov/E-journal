@@ -9,7 +9,10 @@
     <title>E-journal</title>
   </head>
 
-<body>
+<body id = 'body'>
+    <div id="alertblock">
+      
+    </div>
     <div id="work_obl" class = 'conatiner_fluid'>
         <nav class="navbar navbar-expand-lg nav-pills nav-fill-green bg-green">
             <div class="container-fluid">
@@ -28,7 +31,7 @@
               </div>
             </div>
           </nav>
-          <div class="d-flex align-items-start ">
+          <div class="d-flex align-items-start" id = 'journal_page'>
             <div class="nav flex-column nav-pills me-12" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <button class="nav-link active btn-outline-info" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 Журнал</button>

@@ -2,7 +2,7 @@
 
 import {SendRequest} from '../SendRequest';
 import {Alert} from '../Alert';
-export const AppendRating = function (block) {
+export const EditRating = function (block) {
     let form = block.children[0];
     let formChild = form.children
     let span = block.children[1];
@@ -26,6 +26,7 @@ export const AppendRating = function (block) {
             createRating(form);
         }else if(span.innerText !== ""){
             updateRating(form);
+            input.value = span.innerHTML;
         }
     }
 }
@@ -34,7 +35,7 @@ function createRating(form){
     let dataForm = new FormData(form);
     SendRequest('POST', 'create/rating', dataForm)
     .then(data => Alert('Оценка создана','success'))//Передаем сообщение от сервера
-    .catch(err => console.log(err));
+    .catch(err => Alert('Что то пошло не так','error'))//;
     console.log('Создание оценки')
 }
 
