@@ -62,7 +62,7 @@ button {
     margin-top: 20px;
 }
 
-#header_form > {
+#header_form {
     margin-left: 10px;
 }
 select{
@@ -77,7 +77,9 @@ input{
     border-color: var(--bg-green);
     outline:none;
 }
-option:checked { color: black; }
+option:checked { 
+    color: black; 
+}
 #header_form_journal{
     align-items:center;
 }
