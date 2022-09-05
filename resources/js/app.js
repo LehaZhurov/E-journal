@@ -4,7 +4,7 @@ import Alpine from 'alpinejs';
 import './journalform/appenddayinform'
 import './journalform/editRating'
 import './journalform/getrating'
-import './journalform/AppendRating'
+import './journalform/RatingTableConstructor'
 window.Alpine = Alpine;
 
 function rating(){

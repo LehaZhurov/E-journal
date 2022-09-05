@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Subject;
 /**
+ * App\Models\Rating
+ *
  * @package App/Models/Role
  * @property int $id
  * @property int $value - оценка
@@ -16,7 +18,29 @@ use App\Models\Subject;
  * @property-read array $teacher - педагог который поставил оценку
  * @property-read array $subject - предмет по которому поставили оценку
  * @property-read array $student - студент которому поставили оценку
- * 
+ * @property int $student_id
+ * @property int $teacher_id
+ * @property int $subject_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read int|null $student_count
+ * @property-read int|null $subject_count
+ * @property-read int|null $teacher_count
+ * @method static \Database\Factories\RatingFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereNumDay($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereNumMonth($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereStudentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereSubjectId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereTeacherId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereValue($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereYear($value)
+ * @mixin \Eloquent
  */
 class Rating extends Model
 {

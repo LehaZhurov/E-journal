@@ -1,11 +1,18 @@
 <?php
+
 namespace App\Action\Rating;
+
 use App\Models\Rating;
-class UpdateRatingAction{
-        
-    public static function execute(array $data) : void
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Collection;
+class UpdateRatingAction
+{
+
+    public static function execute(int $id,int $value) : Rating
     {
-        $id = $data['id'];
-    }    
-        
+        $rating = Rating::findOrFail($id);
+        $rating->value = $value;
+        $rating->save();
+        return $rating;
+    }
 }

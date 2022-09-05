@@ -1,7 +1,7 @@
 import { EditRating } from './editRating.js';
 
-export let AppendRating = class {
-    tableSize = 15;
+export let RatingTableConstructor = class {
+    tableSize = 20;
     journal;
     dateString;
     dateArray = [];
@@ -43,7 +43,6 @@ export let AppendRating = class {
         this.AppendDateString();
         this.AppendRatings(UserRatings)
         this.appendFunction('ratings', EditRating)
-        console.log(this.UserRatings, this.dateArray);
     }
     createTable(UserRatings) {
         this.PrepareDate(UserRatings);
@@ -103,7 +102,6 @@ export let AppendRating = class {
             }
         }
         this.UserRatings = UserRatings;
-        console.log(this.UserRatings, this.dateArray);
         this.AppendDateString();
         this.AppendRatings(UserRatings)
         this.appendFunction('ratings', EditRating)
@@ -181,6 +179,7 @@ export let AppendRating = class {
             Year = this.year;
         }
         let ratingUserId = userId;
+        let ratingId = UserRatings['rating_id'];
         let block;
         block = `
         <li class="list-group-item ratings"  style = "width:` + widht + `;">
@@ -192,6 +191,7 @@ export let AppendRating = class {
                 <input type='text' name = 'num_month' value='`+ numMonth + `' class='d-none'>
                 <input type='text' name = 'year' value='`+ Year + `' class='d-none'>
                 <input type='text' name = 'value' value='`+ ratingValue + `' class='d-none rating_input' id = 'ratingInput'>
+                <input type='text' name = 'rating_id' value='`+ ratingId + `' class='d-none rating_input' id = 'ratingId'>
             </form>
             <span>`+ ratingValue + `</span>
         </li>`

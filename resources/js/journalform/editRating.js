@@ -14,20 +14,27 @@ export const EditRating = function (block) {
         input.classList.add('rating_input');
         block.classList.add('null_padding');
         span.classList.add('d-none');
-        input.title = 'Оценка будет выставлена за ' + data;
     }else{
         input.classList.add('d-none');
         span.classList.remove('d-none');
         block.classList.remove('null_padding');
         input.title = '';
         //Условие если значение пустое
-        if(span.innerHTML === ""){
+        if(span.innerHTML === "" && input.value != ""){
             span.innerHTML = input.value;
             createRating(form);
+        }else if(input.value == span.innerText){
+
         }else if(span.innerText !== ""){
-            updateRating(form);
+            span.innerHTML = input.value;
             input.value = span.innerHTML;
+            updateRating(form);
         }
+    }
+    if(span.innerHTML === ""){
+        input.title = 'Оценка будет выставлена за ' + data;
+    }else{
+        input.title = 'Оценка будет обновлена за ' + data;
     }
 }
 
@@ -36,12 +43,13 @@ function createRating(form){
     SendRequest('POST', 'create/rating', dataForm)
     .then(data => Alert('Оценка создана','success'))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))//;
-    console.log('Создание оценки')
 }
 
 function updateRating(form){
-    console.log('Обноление оценки')
-    console.log(form);
+    let dataForm = new FormData(form);
+    SendRequest('POST', 'update/rating', dataForm)
+    .then(data => Alert('Оценка обновлена','success'))//Передаем сообщение от сервера
+    .catch(err => Alert('Что то пошло не так','error'))//;
 }
 
 

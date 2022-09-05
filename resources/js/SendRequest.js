@@ -6,7 +6,7 @@ export function SendRequest(method,url,body = null){
 		xhr.withCredentials = true;
 		xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content )
 		if(xhr.readyState == 1){
-			console.log('Отправка запроса '+method+' запроса' + url);
+			console.log('Отправка запроса '+method+' запроса на ' + url);
 		}
 		xhr.onload = () =>{
 			if(xhr.status >= 400){
