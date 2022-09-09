@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Group;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\Group;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Models\Subject
@@ -35,9 +36,9 @@ use App\Models\Group;
 class Subject extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['name'];
-
 
     public function user()
     {

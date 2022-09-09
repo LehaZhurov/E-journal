@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\Subject;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 /**
  * App\Models\Group
  *
@@ -32,14 +34,17 @@ use App\Models\Subject;
 class Group extends Model
 {
     use HasFactory;
-
+    use SoftDeletes;
+    
     protected $fillable = ['name'];
 
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 
-    public function subjects(){
+    public function subjects()
+    {
         return $this->belongsToMany(Subject::class);
     }
 }

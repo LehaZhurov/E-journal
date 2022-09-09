@@ -7,6 +7,7 @@ use App\Models\Role;
 use Leeto\MoonShine\Resources\Resource;
 use Leeto\MoonShine\Fields\ID;
 use Leeto\MoonShine\Fields\Text;
+use Leeto\MoonShine\Filters\TextFilter; 
 
 class RoleResource extends Resource
 {
@@ -35,7 +36,9 @@ class RoleResource extends Resource
 
     public function filters(): array
     {
-        return [];
+        return [
+            TextFilter::make('Имя', 'name'),
+        ];
     }
 
     public function actions(): array

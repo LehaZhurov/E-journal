@@ -5,7 +5,7 @@
 
 :root {
     --txt-color-white: white;
-    --bg-green: #066137;
+    --bg-green: #3d6b30;
 }
 
 
@@ -109,6 +109,15 @@ option:checked {
     width: 100%;
     display: flex;
     justify-content: center
+}
+.bg-green{
+    background-color:var(--bg-green);
+}
+.nav-pills .nav-link.active{
+    background-color: var(--bg-green);
+}
+.accordion-button:not(.collapsed)::after{
+    background-image: none;
 }
 @media screen and (max-width: 1200px) {
     .scroll_journal_content{

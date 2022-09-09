@@ -12,7 +12,7 @@ use Leeto\MoonShine\Fields\Password;
 use Leeto\MoonShine\Fields\PasswordRepeat;
 use Leeto\MoonShine\Fields\BelongsToMany;
 use Leeto\MoonShine\Fields\BelongsTo;
-
+use Leeto\MoonShine\Filters\TextFilter; 
 
 class UserResource extends Resource
 {
@@ -25,7 +25,7 @@ class UserResource extends Resource
 		return [
             Text::make('ФИО','name')->sortable(),
             BelongsToMany::make('Роль', 'roles', 'name'),
-            BelongsTo::make('группа', 'group', 'name')->sortable(),
+            BelongsTo::make('Группа', 'group', 'name')->sortable(),
             Email::make('e-mail','email')->sortable(),
             Password::make('Пароль','password')->hideOnIndex(),
             PasswordRepeat::make('Повторите пароль','repeat_password')->hideOnIndex(),
@@ -48,7 +48,9 @@ class UserResource extends Resource
 
     public function filters(): array
     {
-        return [];
+        return [
+            TextFilter::make('ФИО','name'),
+        ];
     }
 
     public function actions(): array

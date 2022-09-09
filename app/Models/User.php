@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Role;
 use App\Models\Group;
 use App\Models\Subject;
@@ -49,7 +50,7 @@ use App\Models\Rating;
  */
 class User extends Authenticatable
 {
-    use HasFactory,Notifiable;
+    use HasFactory,Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -103,7 +104,7 @@ class User extends Authenticatable
     }
 
     public function subjects(){
-        return $this->belongsToMany(Subject::class);
+        return $this->hasMany(Subject::class);
     }
     
     public function ratings(){

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Group::class);
             $table->foreignIdFor(Subject::class);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

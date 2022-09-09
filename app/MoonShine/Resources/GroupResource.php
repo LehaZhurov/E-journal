@@ -9,6 +9,8 @@ use Leeto\MoonShine\Fields\ID;
 use Leeto\MoonShine\Fields\Text;
 use App\Models\Group;
 use Leeto\MoonShine\Fields\BelongsToMany;
+use Leeto\MoonShine\Filters\TextFilter; 
+
 class GroupResource extends Resource
 {
 	public static string $model = Group::class;
@@ -39,7 +41,9 @@ class GroupResource extends Resource
 
     public function filters(): array
     {
-        return [];
+        return [
+            TextFilter::make('Имя', 'name'),
+        ];
     }
 
     public function actions(): array

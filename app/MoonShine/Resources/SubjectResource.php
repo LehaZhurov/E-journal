@@ -7,6 +7,7 @@ use App\Models\Subject;
 use Leeto\MoonShine\Resources\Resource;
 use Leeto\MoonShine\Fields\Text;
 use Leeto\MoonShine\Fields\BelongsTo;
+use Leeto\MoonShine\Filters\TextFilter; 
 
 class SubjectResource extends Resource
 {
@@ -34,7 +35,9 @@ class SubjectResource extends Resource
 
     public function filters(): array
     {
-        return [];
+        return [
+            TextFilter::make('Название','name')
+        ];
     }
 
     public function actions(): array

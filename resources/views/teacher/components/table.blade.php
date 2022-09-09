@@ -18,7 +18,7 @@
                     <label for="subject_select_journal">Предмет:</label>
                     <select name="subject" id="subject_select_journal">
                         @foreach ($subjects as $subject)
-                            <option value="{{ $subject->subject_id }}">{{ $subject->name }}</option>
+                            <option value="{{ $subject->id }}">{{ $subject->name }}</option>
                         @endforeach
                     </select>
                 </div>

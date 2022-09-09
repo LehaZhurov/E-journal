@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\Subject;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 /**
  * App\Models\Rating
  *
@@ -45,16 +47,20 @@ use App\Models\Subject;
 class Rating extends Model
 {
     use HasFactory;
-
-    public function teacher(){
-        return $this->hasMany(User::class,'teacher_id');
+    use SoftDeletes;
+    
+    public function teacher()
+    {
+        return $this->hasMany(User::class, 'teacher_id');
     }
 
-    public function student(){
-        return $this->hasMany(User::class,'student_id');
+    public function student()
+    {
+        return $this->hasMany(User::class, 'student_id');
     }
 
-    public function subject(){
-        return $this->hasMany(Subject::class,'subject_id');
+    public function subject()
+    {
+        return $this->hasMany(Subject::class, 'subject_id');
     }
 }

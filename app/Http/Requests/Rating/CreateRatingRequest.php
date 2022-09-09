@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Rating;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CreateRatingRequest extends FormRequest
 {
@@ -24,13 +25,13 @@ class CreateRatingRequest extends FormRequest
     public function rules()
     {
         return [
-            'value' => ['required', 'int','min:2','max:5'],
-            'user_id' => ['required','int'],
+            'value' => ['required', 'string', Rule::in([5,4,3,2,'нб'])],
+            'user_id' => ['required', 'int'],
             'teacher_id' => [],
             'subject_id' => ['required', 'int'],
-            'num_day' => ['required','string'],
-            'num_month' => ['required','string'],
-            'year' => ['required','string'],
+            'num_day' => ['required', 'string'],
+            'num_month' => ['required', 'string'],
+            'year' => ['required', 'string'],
         ];
     }
 }

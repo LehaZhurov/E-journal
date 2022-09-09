@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->integer('value');
+            $table->string('value');
             $table->string('num_day');
             $table->string('num_month');
             $table->string('year');
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->foreignId('teacher_id');
             $table->foreignIdFor(Subject::class);   
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
