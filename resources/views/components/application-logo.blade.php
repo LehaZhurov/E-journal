@@ -1,1 +1,1 @@
-<img src="{{ asset('/img/gi.gif') }}" alt="">
+<img src="{{ asset('/storage/img/logo.png') }}" alt="">

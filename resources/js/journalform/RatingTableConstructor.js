@@ -113,7 +113,7 @@ export let RatingTableConstructor = class {
         let stringId = 'dateString'
         //Добавление вернхний строки в таблицу
         this.journal.innerHTML += `
-            <ul class="list-group list-group-horizontal-sm" id = "` + stringId + `">` + this.getItemTable('Дата/ФИО', '220px') + `</ul>
+            <ul class="list-group list-group-horizontal-sm" style = 'text-alight:center;' id = "` + stringId + `">` + this.getItemTable('Дата/ФИО', '300px') + `</ul>
         `;
         this.dateString = document.querySelector('#dateString');//Строка где указаны даты
         for (let i = 0; i < this.tableSize; i++) {
@@ -129,7 +129,7 @@ export let RatingTableConstructor = class {
             let stringId = 'rating_string_num' + i;//id строки где хранатся оценки пользователя
             this.journal.innerHTML += '<ul class="list-group list-group-horizontal-sm" id = "' + stringId + '"></ul>';
             let tableString = document.querySelector('#' + stringId);
-            tableString.innerHTML += this.getItemTable(UserRatings[i]['name'], '220px');//Вывод имеен в столбик
+            tableString.innerHTML += this.getItemTable(UserRatings[i]['name'], '300px');//Вывод имеен в столбик
             let userId = UserRatings[i]['id']
             for (let j = 0; j < this.tableSize; j++) {//Перебор оценок пользователя
                 let rating = UserRatings[i]['ratings'][j];
