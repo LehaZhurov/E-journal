@@ -28,11 +28,8 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Выйти') }}
-                            </x-dropdown-link>
+                            <a class="" href="/logout" onclick="event.preventDefault();
+                                this.closest('form').submit();">Выйти</a>
                         </form>
                     </ul>
                     <form class="d-flex" role="search">
@@ -47,27 +44,31 @@
                 <button class="nav-link active btn-outline-info" id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">
-                    Журнал</button>
-                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                    Статистика
+                </button>
+                {{-- <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                     aria-selected="false">
-                    Группы</button>
+                    Группы
+                </button>
                 <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
                     aria-selected="false">
-                    Часы</button>
+                    Часы
+                </button>
                 <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
                     aria-selected="false">
-                    Рассылка</button>
+                    Рассылка
+                </button> --}}
             </div>
             <div class="tab-content container-fluid" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                     aria-labelledby="v-pills-home-tab" tabindex="0">
-                    @include('teacher.components.table')
+                    @include('student.components.stat')
                 </div>
             </div>
-            <div class="tab-content container-fluid" id="v-pills-tabContent">
+            {{-- <div class="tab-content container-fluid" id="v-pills-tabContent">
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
                     tabindex="0" style = 'width:100%'>
                     @include('teacher.components.group')
@@ -79,7 +80,7 @@
                     tabindex="0">...</div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
                     tabindex="0">...</div>
-            </div>
+            </div> --}}
         </div>
     </div>
     </div>
@@ -87,7 +88,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
-    @vite(['resources/js/teacher/app.js']);
+    @vite(['resources/js/student/app.js']);
 </body>
 
 </html>

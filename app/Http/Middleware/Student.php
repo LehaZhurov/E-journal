@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Teacher
+class Student
 {
     /**
      * Handle an incoming request.
@@ -21,10 +21,8 @@ class Teacher
             return redirect('/login');
         }
         foreach (Auth::user()->roles as $role){
-            if($role->name == 'teacher'){
+            if($role->name == 'student'){
                 return $next($request);
-            }else{
-                return redirect('/student/cabinet');
             }
         }
         return redirect('/login');

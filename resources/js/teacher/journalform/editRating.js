@@ -1,7 +1,7 @@
 
 
-import {SendRequest} from '../SendRequest';
-import {Alert} from '../Alert';
+import {SendRequest} from '../../SendRequest';
+import {Alert} from '../../Alert';
 export const EditRating = function (block) {
     let form = block.children[0];
     let span = block.children[1];

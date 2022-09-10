@@ -7,7 +7,10 @@
     --txt-color-white: white;
     --bg-green: #3d6b30;
 }
-
+h2{
+    margin-left: 20px;
+    font-size:20px;
+}
 
 #work_obl{
     margin: 0px 20px 0px 20px;
@@ -36,6 +39,9 @@
 }
 
 a {
+    color: var(--txt-color-white);
+}
+a:hover{
     color: var(--txt-color-white);
 }
 
@@ -127,6 +133,13 @@ option:checked {
         overflow-x: scroll;
         display: block;
     }
+    #work_obl{
+        margin: 0;
+    }
+    .container-fluid{
+        padding: 0;
+    }
+    
 }
 @media screen and (max-width: 1000px) {
     .list-group{
@@ -138,6 +151,9 @@ option:checked {
     }
     select{
         width: 100%;
+    }
+    .list-group {
+        flex-direction: column;
     }
 }
 @media screen and (max-width:600px) {

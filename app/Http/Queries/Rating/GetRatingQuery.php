@@ -1,37 +1,27 @@
 <?php
-
 namespace App\Http\Queries\Rating;
 
 use App\Models\Rating;
-use App\Models\User;
-use App\Models\Group;
-use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
 
 class GetRatingQuery
 {
 
-    public static function get(array $param) : Collection
+    public static function find(int $page) : Collection
     {
-        $group = Group::query()->where('id', $param['group'])->with('users')->first();
-        $users = $group->users()->get()->all();
-        // dd($userIds);
-        $userRatings = [];
-        foreach ($users as $user) {
-            $userRatings[$user->id]['user'] = collect([
-                'name' => $user->name,
-                'id' => $user->id
-            ]);
-            $userRatings[$user->id]['ratings'] = 
-            $user->ratings()
-            ->where('num_month',$param['month'])
-            ->where('subject_id',$param['subject'])
-            ->orderBy('num_day')
-            ->get();
-        }
-        $userRatings = collect(array_values($userRatings));
-        return $userRatings;
+        $limit = 20;
+        $offset = $limit * $page;
+        $studentId = Auth::user()->id;
+
+        $ratings = Rating::query()->where('student_id', $studentId)
+            ->join('users', 'ratings.teacher_id','=','users.id')
+            ->join('subjects', 'ratings.subject_id','=','subjects.id')
+            ->select('ratings.*','users.name as teacher_name','subjects.name as subject_name')
+            ->orderBy('created_at')
+            ->offset($offset)
+            ->limit($limit);
+        return $ratings->get();
     }
 
-
-    
 }

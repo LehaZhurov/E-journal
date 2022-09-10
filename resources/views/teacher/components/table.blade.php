@@ -40,7 +40,7 @@
                     </select>
                 </div>
                 <div class='d-flex align-items-center'>
-                    <label for="days_select_journal" title="За это день будет создана оценка">День:</label>
+                    <label for="days_select_journal" title="Выбирите день и он будет добавлен в журнал">День:</label>
                     <select name="day" id="days_select_journal">
                         <option value="01">Выбирите месяц</option>
                     </select>

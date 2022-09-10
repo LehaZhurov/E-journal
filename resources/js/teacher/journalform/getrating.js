@@ -5,8 +5,8 @@ let month = document.querySelector('#months_select_journal');
 let year = document.querySelector('#years_select_journal');
 let journal;
 
-import { SendRequest } from '../SendRequest.js';
-import { load } from '../load.js';
+import { SendRequest } from '../../SendRequest.js';
+import { load } from '../../load.js';
 import { RatingTableConstructor } from './RatingTableConstructor.js';
 import { setYearsForm } from './setYearForm';
 group.addEventListener("change", function () {
