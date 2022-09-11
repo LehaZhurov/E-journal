@@ -28,11 +28,9 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Выйти') }}
-                            </x-dropdown-link>
+                            <a class="" href="/logout"
+                                onclick="event.preventDefault();
+                                    this.closest('form').submit();">Выйти</a>
                         </form>
                     </ul>
                     <form class="d-flex" role="search">
@@ -43,18 +41,17 @@
             </div>
         </nav>
         <div class="d-flex justify-content-end flex-column" id='journal_page'>
-            <div class="nav flex-row nav-pills me-12 mr-auto" id="v-pills-tab" role="tablist" aria-orientation="vertical" >
-                <button class="nav-link active btn-outline-info" id="v-pills-home-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+            <div class="nav flex-row nav-pills me-12 mr-auto" id="v-pills-tab" role="tablist"
+                aria-orientation="vertical">
+                <button class="nav-link active btn-outline-info" id="v-pills-table-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-table" type="button" role="tab" aria-controls="v-pills-table"
                     aria-selected="true">
                     Журнал</button>
-                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false">
+                <button class="nav-link" id="v-pills-groups-tab" data-bs-toggle="pill" data-bs-target="#v-pills-groups"
+                    type="button" role="tab" aria-controls="v-pills-groups" aria-selected="false">
                     Группы</button>
-                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
-                    aria-selected="false">
+                <button class="nav-link" id="v-pills-hours-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hours"
+                    type="button" role="tab" aria-controls="v-pills-hours" aria-selected="false">
                     Часы</button>
                 <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
@@ -62,27 +59,20 @@
                     Рассылка</button>
             </div>
             <div class="tab-content container-fluid" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                    aria-labelledby="v-pills-home-tab" tabindex="0">
+                <div class="tab-pane fade show active" id="v-pills-table" role="tabpanel"
+                    aria-labelledby="v-pills-table-tab" tabindex="0">
                     @include('teacher.components.table')
                 </div>
-            </div>
-            <div class="tab-content container-fluid" id="v-pills-tabContent">
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
-                    tabindex="0" style = 'width:100%'>
+                <div class="tab-pane fade" id="v-pills-groups" role="tabpanel" aria-labelledby="v-pills-groups-tab"
+                    tabindex="0" style='width:100%'>
                     @include('teacher.components.group')
                 </div>
-            </div>
-                <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
-                    tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
-                    tabindex="0">...</div>
-                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"
-                    tabindex="0">...</div>
+                <div class="tab-pane fade" id="v-pills-hours" role="tabpanel" aria-labelledby="v-pills-hours-tab"
+                    tabindex="0" style='width:100%'>
+                    @include('teacher.components.hours')
+                </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">

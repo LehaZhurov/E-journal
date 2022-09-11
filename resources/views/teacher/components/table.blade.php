@@ -6,10 +6,7 @@
                 <div class='d-flex align-items-center'>
                     <label for="group_select_journal">Группа:</label>
                     <select name="group" id="group_select_journal">
-                        @foreach ($groups as $group)
-                            @if ($group->name == 'Педагоги')
-                                @continue
-                            @endif
+                        @foreach ($teacherGroups as $group)
                             <option value="{{ $group->id }}">{{ $group->name }}</option>
                         @endforeach
                     </select>

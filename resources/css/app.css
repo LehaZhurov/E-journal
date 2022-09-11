@@ -118,6 +118,7 @@ option:checked {
 }
 .bg-green{
     background-color:var(--bg-green);
+    color:aliceblue;
 }
 .nav-pills .nav-link.active{
     background-color: var(--bg-green);
@@ -155,9 +156,6 @@ option:checked {
     }
     select{
         width: 100%;
-    }
-    .list-group {
-        flex-direction: column;
     }
 }
 @media screen and (max-width:600px) {

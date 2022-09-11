@@ -6,11 +6,10 @@ use Illuminate\Support\Facades\Auth;
 class CountTruancyStudentQuery
 {
 
-    public static function get(): int
+    public static function get(int $userId): int
     {
-        $studentId = Auth::user()->id;
         $count = Rating::query()
-        ->where('student_id', $studentId)
+        ->where('student_id', $userId)
         ->where('value','нб')
         ->count();
         return $count;

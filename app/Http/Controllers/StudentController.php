@@ -12,7 +12,8 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $allTruancy = CountTruancyStudentQuery::get();
+        $studentId = Auth::user()->id;
+        $allTruancy = CountTruancyStudentQuery::get($studentId);
         $truancyForYear = CountTruancyStudentForYearQuery::get(date('Y'));
         $user = Auth::user();
         return view('student.index',['allTruancy' => $allTruancy,'truancyForYear' => $truancyForYear,'user' => $user]);
