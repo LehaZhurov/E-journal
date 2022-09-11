@@ -26,6 +26,11 @@ use App\Models\User;
  * @method static \Illuminate\Database\Eloquent\Builder|Role whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Role whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|Role onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Role withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Role withoutTrashed()
  */
 
 

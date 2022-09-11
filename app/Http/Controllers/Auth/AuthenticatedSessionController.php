@@ -34,17 +34,14 @@ class AuthenticatedSessionController extends Controller
         $role = null;
         if (Auth::check()) {
             $role = Auth::user()->roles()->first()->name;
+            if($role == 'teacher'){
+                return redirect('/teacher/cabinet');
+            }else{
+                return redirect('/student/cabinet');
+            };
         } else {
             return redirect('/login');
         }
-        if ($role == 'teacher') {
-            return redirect('/teacher/cabinet');
-        } elseif ($role == 'student') {
-            return 'Кабинет студента';
-        } else {
-            return redirect('/login');
-        }
-        return redirect('/login');
     }
 
     /**

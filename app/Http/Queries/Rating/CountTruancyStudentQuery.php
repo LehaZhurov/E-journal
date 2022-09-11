@@ -9,7 +9,10 @@ class CountTruancyStudentQuery
     public static function get(): int
     {
         $studentId = Auth::user()->id;
-        $count = Rating::query()->where('student_id', $studentId)->count();
+        $count = Rating::query()
+        ->where('student_id', $studentId)
+        ->where('value','нб')
+        ->count();
         return $count;
     }
 

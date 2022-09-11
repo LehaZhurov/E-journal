@@ -31,6 +31,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Subject whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Subject whereUserId($value)
  * @mixin \Eloquent
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|Subject onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Subject whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Subject withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Subject withoutTrashed()
  */
 
 class Subject extends Model

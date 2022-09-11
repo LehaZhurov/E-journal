@@ -8,7 +8,7 @@
     --bg-green: #3d6b30;
 }
 h2{
-    margin-left: 20px;
+    margin-left: 15px;
     font-size:20px;
 }
 
@@ -124,6 +124,10 @@ option:checked {
 }
 .accordion-button:not(.collapsed)::after{
     background-image: none;
+}
+.scroll{
+    overflow-y: scroll;
+    height:200px;
 }
 @media screen and (max-width: 1200px) {
     .scroll_journal_content{

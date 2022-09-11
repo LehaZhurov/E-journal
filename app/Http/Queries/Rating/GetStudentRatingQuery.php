@@ -5,12 +5,12 @@ use App\Models\Rating;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
-class GetRatingQuery
+class GetStudentRatingQuery
 {
 
     public static function find(int $page) : Collection
     {
-        $limit = 20;
+        $limit = 40;
         $offset = $limit * $page;
         $studentId = Auth::user()->id;
 

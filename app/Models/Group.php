@@ -29,6 +29,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Group whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Group whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|Group onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Group whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Group withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Group withoutTrashed()
  */
 
 class Group extends Model

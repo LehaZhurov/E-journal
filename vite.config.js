@@ -7,8 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/journalform/appenddayinform.js',
-                'resources/js/journalform/editRating.js',
+                'resources/js/teacher/app.js',
+                'resources/js/student/app.js',
             ],
             refresh: true,
         }),

@@ -43,6 +43,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereValue($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereYear($value)
  * @mixin \Eloquent
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|Rating onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Rating whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|Rating withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Rating withoutTrashed()
  */
 class Rating extends Model
 {
