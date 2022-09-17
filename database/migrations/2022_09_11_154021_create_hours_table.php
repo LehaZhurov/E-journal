@@ -8,7 +8,7 @@ use App\Models\Subject;
 use App\Models\User;
 return new class extends Migration
 {
-    /**
+    /** 
      * Run the migrations.
      *
      * @return void
@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('value');
             $table->foreignIdFor(Group::class);
             $table->foreignIdFor(Subject::class);
-            $table->foreignIdFor(User::class);
             $table->timestamps();
         });
     }

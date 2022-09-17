@@ -9,8 +9,13 @@ import { SendRequest } from '../../SendRequest.js';
 import { load } from '../../load.js';
 import { RatingTableConstructor } from './RatingTableConstructor.js';
 import { setYearsForm } from './setYearForm';
+import { getSubjectGroup } from './getSubjectGroup';
+
+
 group.addEventListener("change", function () {
     getRating();
+    getSubjectGroup(group.value,subject);
+    
 });
 subject.addEventListener("change", function () {
     getRating();
@@ -29,7 +34,7 @@ day.addEventListener("change", function () {
 
 
 
-function getRating() {
+export function getRating() {
     let data_form = document.querySelector('#journal_form');
     journal = document.querySelector('#journal_table');//Блок таблицы;
     journal.innerHTML = ' ';
@@ -45,8 +50,5 @@ function GenerateTable(data) {
     TableConstructor = new RatingTableConstructor(day.value, month.value, year.value, subject.value, group.value);
     TableConstructor.createTable(data)
     load('body', 'Завершена', false);
-}
-window.onload = () => {
-    setTimeout(getRating(), 3000);
 }
 setYearsForm(year);

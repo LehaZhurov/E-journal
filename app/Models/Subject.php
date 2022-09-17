@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Group;
 use App\Models\User;
+use App\Models\Hour;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,9 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App/Models/Subject
  * @property int $id
  * @property string $name - название предмета
- * @property-read array $users - массив педагогов
  * @property-read array $groups - массив групп у которых есть данный предмет
- * @property int $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read int|null $groups_count
@@ -53,5 +52,9 @@ class Subject extends Model
     public function groups()
     {
         return $this->belongsToMany(Group::class);
+    }
+
+    public function hours(){
+        return $this->belongsToMany(Hour::class);
     }
 }

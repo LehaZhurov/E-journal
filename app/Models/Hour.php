@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Group;
+use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,8 +30,21 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Hour whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hour whereValue($value)
  * @mixin \Eloquent
+ * @property-read Group|null $group
+ * @property-read Subject|null $subject
+ * @property-read User|null $user
  */
 class Hour extends Model
 {
     use HasFactory;
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
 }

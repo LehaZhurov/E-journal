@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 class GetTeacherRatingQuery
 {
 
-    public static function get(array $param): Collection
+    public static function get(array $param): Collection | array
     {
         $group = Group::query()->where('id', $param['group'])->with('users')->first();
         $users = $group->users()->get()->all();

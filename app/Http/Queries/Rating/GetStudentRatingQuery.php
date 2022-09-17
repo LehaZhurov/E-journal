@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class GetStudentRatingQuery
 {
 
-    public static function find(int $page) : Collection
+    public static function find(int $page) : Collection | array 
     {
         $limit = 40;
         $offset = $limit * $page;

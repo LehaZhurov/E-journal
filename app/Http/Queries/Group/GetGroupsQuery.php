@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Collection;
 
 class GetGroupsQuery
 {
-    //Возвращает список групп с их учатниками
-    public static function get(): Collection
+    //Возвращает список групп с их учаcтниками
+    public static function get(): Collection | array 
     {
         $groups = Group::with('users')->get();
         return $groups;

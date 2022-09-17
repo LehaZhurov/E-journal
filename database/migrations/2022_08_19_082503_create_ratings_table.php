@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('num_day');
             $table->string('num_month');
             $table->string('year');
-            $table->foreignId('student_id');
+            $table->foreignId('student_id'); 
             $table->foreignId('teacher_id');
             $table->foreignIdFor(Subject::class);   
             $table->timestamps();

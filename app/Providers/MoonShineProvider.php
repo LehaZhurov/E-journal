@@ -12,7 +12,7 @@ use App\MoonShine\Resources\UserResource;
 use App\MoonShine\Resources\RoleResource;
 use App\MoonShine\Resources\GroupResource;
 use App\MoonShine\Resources\SubjectResource;
-
+use App\MoonShine\Resources\HourResource;
 
 class MoonShineProvider extends ServiceProvider
 {
@@ -42,6 +42,7 @@ class MoonShineProvider extends ServiceProvider
             RoleResource::class, // Ресурс для работы с ролями пользователей из админ панели
             GroupResource::class, // Ресурс для работы с группами пользователей из админ панели
             SubjectResource::class, // Ресурс для работы с предметами из админ панели
+            HourResource::class, // Ресурс для работы с часами занатий из админ панели
         ]);
     }
 }

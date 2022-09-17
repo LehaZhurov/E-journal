@@ -3,13 +3,12 @@
 namespace App\Http\Queries\Subject;
 
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Auth;
-
+use App\Models\Subject;
 class GetSubjectTeacherQuery
 {
 
-    public static function find(): Collection
+    public static function find(int $teacherId): Collection | array
     {
-        return Auth::user()->subjects()->select('id', 'name')->get();
+        return Subject::query()->where('user_id', $teacherId)->select('id', 'name')->get();
     }
 }
