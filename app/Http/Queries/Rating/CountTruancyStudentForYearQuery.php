@@ -4,10 +4,9 @@ use App\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 class CountTruancyStudentForYearQuery{
         
-
-    public static function get(string $year) : int
+    //Возврощате кол-во прогулов студента за указанный год
+    public static function get(int $studentId,string $year) : int
     {
-        $studentId = Auth::user()->id;
         $count = Rating::query()
         ->where('student_id', $studentId)
         ->where('value','нб')

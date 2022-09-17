@@ -1,6 +1,6 @@
 let select_months = document.querySelector('#months_select_journal');
 let select_days = document.querySelector('#days_select_journal');
-
+//Вывод дней в месяце в форму 
 function AppendDayMonth(){
     let value = select_months.value;
     let num_day = 0;

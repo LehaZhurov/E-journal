@@ -8,6 +8,7 @@ use App\Http\Resources\Subject\SubjectWithTheClockResource;
 
 class SubjectController extends Controller
 {
+    //Получение списка предметов с кол-вом часов для каждой группы по каждому предмету
     public function getSubjectForTeacher()
     {
         $teacherId = Auth::user()->id;

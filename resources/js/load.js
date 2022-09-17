@@ -1,5 +1,9 @@
+
+
+//Отоброжает экран загрузки
 export function load(blockId,text = 'Загрузка',start){
     let block = document.querySelector('#'+blockId)
+    //Выводить экран загрузки если функция вызвана с true
     if(start == true){
         let loadblock = document.createElement('div');
         loadblock.setAttribute('style',`
@@ -21,6 +25,7 @@ export function load(blockId,text = 'Загрузка',start){
     p.innerText = text;
     loadblock.appendChild(p);
     block.appendChild(loadblock);
+    //Скрыть созданный экран переда false
     }else{
         let loadblock = document.querySelector('#loadblock');
         if(loadblock){

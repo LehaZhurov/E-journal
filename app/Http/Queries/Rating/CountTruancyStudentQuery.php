@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CountTruancyStudentQuery
 {
-
+    //Возврощате кол-во прогулов за все время 
     public static function get(int $userId): int
     {
         $count = Rating::query()

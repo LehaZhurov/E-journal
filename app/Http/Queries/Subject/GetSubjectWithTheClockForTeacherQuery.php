@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Collection;
 
 class GetSubjectWithTheClockForTeacherQuery
 {
-
-    public static function find(int $value): Collection | array
+    //Возврощате список предметов с группами у которых они идут и кол-во часов по ним
+    public static function find(int $teacherId): Collection | array
     {
         $subjects = Subject::query()
-            ->where('user_id', $value)
+            ->where('user_id', $teacherId)
             ->join('group_subject', 'subjects.id', '=', 'group_subject.subject_id')
             ->join('groups','group_subject.group_id', '=', 'groups.id')
             ->select('subjects.name as subject_name','groups.name as group_name')

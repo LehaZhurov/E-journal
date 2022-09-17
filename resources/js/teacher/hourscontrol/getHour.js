@@ -2,13 +2,15 @@ import { SendRequest } from '../../SendRequest.js';
 import { load } from '../../load.js';
 import { getSubjectGroup } from '../journalform/getSubjectGroup';
 
+
+//Получени списка предметов с групами и часами по ним
 export function getHour(){
     SendRequest('GET', 'get/hours')
     .then(data => CreateHourTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
     .catch(err => console.log(err));
 }
 
-
+//Создание таблички с часами
 function CreateHourTable(data) {
     let ratingTable = document.querySelector('#hourstable');
     for (var i = 0; i < data.length; i++){

@@ -2,6 +2,9 @@
 
 import {SendRequest} from '../../SendRequest';
 import {Alert} from '../../Alert';
+
+
+//Функция для работы с ячейкой журнала
 export const EditRating = function (block) {
     let form = block.children[0];
     let span = block.children[1];
@@ -39,28 +42,29 @@ export const EditRating = function (block) {
         input.title = 'Оценка будет обновлена за ' + data;
     }
 }
-
+//СОздание новой оценки
 function createRating(form){
     let dataForm = new FormData(form);
     SendRequest('POST', 'create/rating', dataForm)
     .then(data => AddIdToTheRatingForm(JSON.parse(data)['data'],form))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
 }
-
+//Удаление оценки
 function DeleteRating(form){
     let dataForm = new FormData(form);
     SendRequest('POST', 'delete/rating', dataForm)
     .then(data => Alert('Оценка успешно удалена'))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
 }
-
+//Обновление оценки
 function updateRating(form){
     let dataForm = new FormData(form);
     SendRequest('POST', 'update/rating', dataForm)
     .then(data => Alert('Оценка обновлена','success'))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
 }
-
+//Функция для добавлени id созданной оценки для дальнейшего 
+//Её обновления или удалени
 function AddIdToTheRatingForm(data,form){
     let idInput = form.elements.rating_id;
     let ratingId = data['rating_id'];

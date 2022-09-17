@@ -1,4 +1,6 @@
 
+
+//Отправка Ajax запросов к серверу
 export function SendRequest(method,url,body = null){
 	return new Promise ((resolve,reject)=>{
 		const xhr = new XMLHttpRequest();

@@ -33,7 +33,8 @@ day.addEventListener("change", function () {
 });
 
 
-
+//Получения списка пользователей и их оценок для 
+//Посторойки журнала
 export function getRating() {
     let data_form = document.querySelector('#journal_form');
     journal = document.querySelector('#journal_table');//Блок таблицы;

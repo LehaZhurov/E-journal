@@ -2,6 +2,10 @@
 import { SendRequest } from '../../SendRequest.js';
 import { load } from '../../load.js';
 import { Alert } from '../../Alert.js';
+
+
+//Получения списка предметов которые ведет 
+//данный преподователь у выбранной группы
 export function getSubjectGroup(id,block){
     load('body', 'Подгружаю список предметов',true)
     SendRequest('GET', 'get/subject_group/'+id)
@@ -9,7 +13,7 @@ export function getSubjectGroup(id,block){
     .catch(err => Alert('Что то пошло не так','error'))
 }
 
-
+//Вывод списка предметов с сервера
 function updateSubjectsList(data,block){
     block.innerHTML = ' ';
     for(let i = 0; i < data.length; i++){

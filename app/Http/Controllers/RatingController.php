@@ -12,16 +12,19 @@ use App\Http\Resources\Rating\RatingResource;
 
 class RatingController extends Controller
 {
+    //Создание оценки
     public function create(CreateRatingRequest $request): RatingResource
     {
         $rating = CreateRatingAction::execute($request->all());
         return new RatingResource($rating);
     }
+    //Обновленеи оценки
     public function update(UpdateRatingRequest $request): RatingResource
     {
         $rating = UpdateRatingAction::execute($request->get('rating_id'), $request->get('value'));
         return new RatingResource($rating);
     }
+    //Удаленние оценки
     public function delete(DeleteRatingRequest $request): bool
     {
         $result = DeleteRatingAction::execute($request->get('rating_id'));

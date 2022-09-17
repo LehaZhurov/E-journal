@@ -1,3 +1,6 @@
+
+
+//Добовляет года в форму с журналом 
 export function setYearsForm(block) {
     for (let i = 1; i < 4; i++) {
         let date = new Date();

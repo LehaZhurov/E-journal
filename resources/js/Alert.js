@@ -1,3 +1,6 @@
+
+
+//Выводить уведомления 
 export function Alert(text,type){
     let block = document.querySelector('#alertblock');
     let alert = document.createElement('div');

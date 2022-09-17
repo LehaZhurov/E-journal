@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class GetGroupsTeacherQuery
 {
-
+    //Возврощате список групп у которых ведет преподователь
     public static function find(int $userId): Collection | array
     {
         $group = Subject::query()->where('user_id', $userId)

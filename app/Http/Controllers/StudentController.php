@@ -10,18 +10,20 @@ use App\Http\Queries\Rating\CountTruancyStudentForYearQuery;
 use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
+    //Вывод главное страницы в кабинете студента 
     public function index()
     {
         $studentId = Auth::user()->id;
-        $allTruancy = CountTruancyStudentQuery::get($studentId);
-        $truancyForYear = CountTruancyStudentForYearQuery::get(date('Y'));
-        $user = Auth::user();
+        $allTruancy = CountTruancyStudentQuery::get($studentId);//Получение всех прогулов 
+        $truancyForYear = CountTruancyStudentForYearQuery::get($studentId,date('Y'));//Полчение всех прогулов за год
+        $user = Auth::user();//Получение данных пользователя
         return view('student.index',['allTruancy' => $allTruancy,'truancyForYear' => $truancyForYear,'user' => $user]);
     }
-
+    //Получение оценок студента с пагинацией
     public function getRating(int $page) : AnonymousResourceCollection
     {
-        $ratings = GetStudentRatingQuery::find($page);
+        $studentId = Auth::user()->id;
+        $ratings = GetStudentRatingQuery::find($studentId,$page);
         return StudentRatingResource::collection($ratings);
     }
 }

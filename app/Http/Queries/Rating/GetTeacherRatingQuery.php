@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 class GetTeacherRatingQuery
 {
 
+    //Возврощате списк студентов с их оценками
     public static function get(array $param): Collection | array
     {
         $group = Group::query()->where('id', $param['group'])->with('users')->first();

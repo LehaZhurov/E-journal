@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Collection;
 class UpdateRatingAction
 {
-
+    //Обновление оценки по её id
     public static function execute(int $id,int $value) : Rating
     {
         $rating = Rating::findOrFail($id);

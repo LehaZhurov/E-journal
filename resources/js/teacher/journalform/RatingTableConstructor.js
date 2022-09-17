@@ -1,5 +1,8 @@
 import { EditRating } from './editRating.js';
 
+
+
+//Класс который строит журнал
 export let RatingTableConstructor = class {
     tableSize = 20;
     journal;
@@ -18,6 +21,8 @@ export let RatingTableConstructor = class {
         this.subject = subject;
         this.group = group;
     }
+    //Добовляет дату в журнал , для создания оценок 
+    //которе буду выставлены за данный день
     appendDate(value, update = false) {
         if (!this.dateArray.includes(value)) {
             this.dateArray.push(value);
@@ -29,6 +34,7 @@ export let RatingTableConstructor = class {
             }
         }
     }
+    //Добовление пустой ячейки с новой датой к каждому студенту 
     appendNewDateRating(date){
         let UserRatings = this.UserRatings;
         for (let i = 0; i < UserRatings.length; i++) {
@@ -44,10 +50,14 @@ export let RatingTableConstructor = class {
         this.AppendRatings(UserRatings)
         this.appendFunction('ratings', EditRating)
     }
+    //Функция для начала работы
     createTable(UserRatings) {
         this.PrepareDate(UserRatings);
     }
 
+
+    //Функция подготовливает данные с сервера для 
+    //для дальнейшей визуализациии
     PrepareDate(UserRatings) {
         //Сбор массива дней за которые есть оценки
         for (let i = 0; i < UserRatings.length; i++) {
@@ -106,7 +116,7 @@ export let RatingTableConstructor = class {
         this.AppendRatings(UserRatings)
         this.appendFunction('ratings', EditRating)
     }
-
+    //Вывод строки с датами
     AppendDateString() {
         this.journal = document.querySelector('#journal_table');//Блок таблицы
         this.journal.innerHTML = ' ';
@@ -124,13 +134,16 @@ export let RatingTableConstructor = class {
             }
         }
     }
+
+    //Вывод сетки оценок с пользователя
     AppendRatings(UserRatings = this.UserRatings) {
         for (let i = 0; i < UserRatings.length; i++) {
             let stringId = 'rating_string_num' + i;//id строки где хранатся оценки пользователя
             this.journal.innerHTML += '<ul class="list-group list-group-horizontal-sm" id = "' + stringId + '"></ul>';
             let tableString = document.querySelector('#' + stringId);
-            tableString.innerHTML += this.getItemTable(UserRatings[i]['name'], '300px');//Вывод имеен в столбик
+            tableString.innerHTML += this.getItemTable(UserRatings[i]['name'], '300px');//Вывод имеени
             let userId = UserRatings[i]['id']
+            //Вывод строки с оценками данного пользователя
             for (let j = 0; j < this.tableSize; j++) {//Перебор оценок пользователя
                 let rating = UserRatings[i]['ratings'][j];
                 if (typeof (rating) !== 'undefined') {//Если запись о оценки с индксом j cущ-ет 
@@ -143,7 +156,7 @@ export let RatingTableConstructor = class {
             }
         }
     }
-
+    //Пусто элмент журнала
     getItemTable(text = '', widht = '40px') {
         if (text == '') {
             return '<li class="list-group-item"  style = "color:white;width:' + widht + ';">1</li>'
@@ -151,7 +164,7 @@ export let RatingTableConstructor = class {
             return '<li class="list-group-item"  style = "width:' + widht + '">' + text + '</li>'
         }
     }
-
+    //Функциональный элмент журнала
     getItemTableForm(UserRatings, userId, widht = '40px') {
         let ratingValue = UserRatings['value'];
         if (typeof (ratingValue) == 'undefined') {
@@ -197,7 +210,7 @@ export let RatingTableConstructor = class {
         </li>`
         return block;
     }
-
+    //Функция для добавления функции к блоку
     appendFunction(className, fun) {
         let blocks = document.querySelectorAll('.' + className);
         for (var i = 0; i < blocks.length - 1; i++) {
