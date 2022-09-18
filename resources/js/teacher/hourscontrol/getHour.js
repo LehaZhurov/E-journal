@@ -1,5 +1,4 @@
 import { SendRequest } from '../../SendRequest.js';
-import { load } from '../../load.js';
 import { getSubjectGroup } from '../journalform/getSubjectGroup';
 
 
@@ -13,6 +12,7 @@ export function getHour(){
 //Создание таблички с часами
 function CreateHourTable(data) {
     let ratingTable = document.querySelector('#hourstable');
+    ratingTable.innerHTML = ' ';
     for (var i = 0; i < data.length; i++){
         let li = document.createElement('li');
         li.setAttribute('class', 'list-group-item d-flex justify-content-between')

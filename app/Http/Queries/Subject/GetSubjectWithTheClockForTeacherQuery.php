@@ -20,6 +20,7 @@ class GetSubjectWithTheClockForTeacherQuery
                 ->whereColumn('group_id','groups.id')
                 ->limit(1)]
             )
+            ->orderBy('groups.name')
             ->get();
         return $subjects;
     }

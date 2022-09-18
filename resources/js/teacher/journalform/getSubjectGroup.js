@@ -22,5 +22,5 @@ function updateSubjectsList(data,block){
         option.innerText = data[i]['name'];
         block.appendChild(option);
     }
-    load('body', 'Звершенно',false)
+    load('body', 'Завершенно',false)
 }

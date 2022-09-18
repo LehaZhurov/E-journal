@@ -4,6 +4,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\HourController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/cabinet',                      [TeacherController::class, 'index'])->name('teacher.cabinet');
@@ -13,3 +14,4 @@ Route::post('/update/rating',               [RatingController::class, 'update'])
 Route::post('/delete/rating',               [RatingController::class, 'delete'])->name('teacher.deleteRating');
 Route::get('/get/hours',                    [SubjectController::class, 'getSubjectForTeacher'])->name('teacher.getHour');
 Route::get('get/subject_group/{groupId}',   [GroupController::class, 'getSubject'])->name('teacher.getGetSubjectForGroup');
+Route::post('patch/hour',                   [HourController::class, 'patch'])->name('teacher.patch');

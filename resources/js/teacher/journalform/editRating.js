@@ -48,6 +48,7 @@ function createRating(form){
     SendRequest('POST', 'create/rating', dataForm)
     .then(data => AddIdToTheRatingForm(JSON.parse(data)['data'],form))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
+    appendNewRating(form);
 }
 //Удаление оценки
 function DeleteRating(form){
@@ -55,6 +56,7 @@ function DeleteRating(form){
     SendRequest('POST', 'delete/rating', dataForm)
     .then(data => Alert('Оценка успешно удалена'))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
+    appendNewRating(form);
 }
 //Обновление оценки
 function updateRating(form){
@@ -62,6 +64,8 @@ function updateRating(form){
     SendRequest('POST', 'update/rating', dataForm)
     .then(data => Alert('Оценка обновлена','success'))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
+    appendNewRating(form);
+
 }
 //Функция для добавлени id созданной оценки для дальнейшего 
 //Её обновления или удалени
@@ -70,6 +74,29 @@ function AddIdToTheRatingForm(data,form){
     let ratingId = data['rating_id'];
     idInput.setAttribute('value',ratingId);
     Alert('Оценка создана','success')
+}
+//Функиця добовляет созданную оценку в массив оценок
+//который хранится в классе TableConstructor
+function appendNewRating(form){
+    let UserRatings = window.journal.UserRatings;
+    for(let i = 0; i < UserRatings.length; i++){
+        console.log(form);
+        if(UserRatings[i].id == form.elements.user_id.value){
+            for(let j = 0; j < UserRatings[i].ratings.length;j++){
+                let rating = UserRatings[i].ratings[j];
+                if(rating.num_day === form.elements.num_day.value){
+                    UserRatings[i].ratings[j] = {
+                        num_day: form.elements.num_day.value,
+                        num_month: form.elements.num_month.value,
+                        subject_id: form.elements.subject_id.value,
+                        teacher_id: form.elements.teacher_id.value,
+                        value: form.elements.value.value,
+                        year: form.elements.year.value
+                    }
+                }
+            }
+        }
+    }
 }
 
 

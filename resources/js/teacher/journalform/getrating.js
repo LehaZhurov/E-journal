@@ -32,7 +32,6 @@ day.addEventListener("change", function () {
     load('body', 'Добавление дня', false);
 });
 
-
 //Получения списка пользователей и их оценок для 
 //Посторойки журнала
 export function getRating() {
@@ -51,5 +50,7 @@ function GenerateTable(data) {
     TableConstructor = new RatingTableConstructor(day.value, month.value, year.value, subject.value, group.value);
     TableConstructor.createTable(data)
     load('body', 'Завершена', false);
+    window.journal = TableConstructor;
+    //Делаем экземпляр журнала глобальным 
 }
 setYearsForm(year);
