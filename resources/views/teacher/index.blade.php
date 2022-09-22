@@ -12,12 +12,9 @@
 </head>
 
 <body id='body'>
-    <div id="alertblock">
-
-    </div>
     <div id="work_obl" class='conatiner-fluid'>
         <nav class="navbar navbar-expand-lg nav-pills nav-fill-green bg-green">
-            <div class="container-fluid">
+            <div class="container-fluid mg-5">
                 <a class="navbar-brand text-light" href="#">E-journal</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -73,6 +70,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="alertblock">
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">

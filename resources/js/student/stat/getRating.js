@@ -3,7 +3,7 @@ import { load } from '../../load';
 
 
 //Получение списка оценок с сервера
-function getRating(page){
+export function getRating(page){
     load('body','Загрузка статистики',true)
     SendRequest('POST', 'get/rating/'+page)
     .then(data => CreateRatingTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
@@ -39,6 +39,3 @@ document.querySelector('#more').onclick = () =>{
     page = page + 1;
 }
 
-window.onload = () => {
-    getRating(0);
-}

@@ -133,6 +133,12 @@ option:checked {
 #hourstable{
     flex-direction:column;
 }
+.mg-5{
+    margin:5px;
+}
+.nonescroll{
+    overflow: hidden;
+}
 @media screen and (max-width: 1200px) {
     .scroll_journal_content{
         width:1100px;

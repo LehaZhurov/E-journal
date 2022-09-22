@@ -1,42 +1,42 @@
 <div class="container-fluid">
-    <div class="container-fluid" id = 'status'>
+    <div class="container-fluid" id='status'>
         <h2>Мои данные</h2>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush flex-column">
             <li class="list-group-item d-flex justify-content-between">
-                ФИО:{{$user->name}}
+                ФИО:{{ $user->name }}
             </li>
             <li class="list-group-item d-flex justify-content-between">
-                Группа:{{$user->group->name}}
+                Группа:{{ $user->group->name }}
             </li>
         </ul>
     </div>
-    <div class="container-fluid" id = 'status'>
+    <div class="container-fluid" id='status'>
         <h2>Пропуски</h2>
-        <ul class="list-group ">
+        <ul class="list-group flex-column">
             <li class="list-group-item d-flex justify-content-between">
-                Вcего пропусков:{{$allTruancy}}
+                Вcего пропусков:{{ $allTruancy }}
             </li>
             <li class="list-group-item d-flex justify-content-between">
-                В этом году:{{$truancyForYear}}
+                В этом году:{{ $truancyForYear }}
             </li>
         </ul>
     </div>
-    <div class="container-fluid " id = 'rating_history'>
+    <div class="container-fluid " id='rating_history'>
         <h2>История оценок</h2>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between">
-                <span>№</span>
-                <span>Предмет</span>
-                <span>Оценка</span>
-                <span>Дата</span>
+            <li class="list-group-item d-flex justify-content-between container-fluid mg-5">
+                <span class="mg-5">№</span>
+                <span class="mg-5">Предмет</span>
+                <span class="mg-5">Оценка</span>
+                <span class="mg-5">Дата</span>
                 {{-- <span>Предопователь</span> --}}
             </li>
         </ul>
-        <ul class="list-group list-group-numbered scroll" id = 'ratingtable'>
-            
+        <ul class="list-group list-group-numbered flex-column" id='ratingtable'>
+
         </ul>
     </div>
     <div class="d-flex container-fluid justify-content-center">
-        <button id = 'more' class = 'btn bg-color'>Еще</button>
+        <button id='more' class='btn bg-color'>Еще</button>
     </div>
 </div>

@@ -6,6 +6,7 @@ export function load(blockId,text = 'Загрузка',start){
     //Выводить экран загрузки если функция вызвана с true
     if(start == true){
         let loadblock = document.createElement('div');
+        block.classList.add('nonescroll')
         loadblock.setAttribute('style',`
             position: absolute;
             top: 0;
@@ -30,6 +31,8 @@ export function load(blockId,text = 'Загрузка',start){
         let loadblock = document.querySelector('#loadblock');
         if(loadblock){
             block.removeChild(loadblock);
-        }
+            block.classList.remove('nonescroll')
+
+        }    
     }
 }
