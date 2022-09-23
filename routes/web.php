@@ -27,7 +27,7 @@ Route::get('/', function () {
     // }else{
     //     return view('auth.login');
     // }
-    return "Index";
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {

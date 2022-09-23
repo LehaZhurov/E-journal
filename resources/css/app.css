@@ -120,6 +120,9 @@ option:checked {
     background-color:var(--bg-green);
     color:aliceblue;
 }
+.border-green{
+    border-color:var(--bg-green);
+}
 .nav-pills .nav-link.active{
     background-color: var(--bg-green);
 }
@@ -139,6 +142,18 @@ option:checked {
 .nonescroll{
     overflow: hidden;
 }
+#loginhref{
+    background-color: var(--bg-green);
+    width:40%;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    border-radius:20px;
+    margin-top: 30px;
+}
+.slogan{
+    font-size:30px;
+}
 @media screen and (max-width: 1200px) {
     .scroll_journal_content{
         width:1100px;
@@ -152,6 +167,12 @@ option:checked {
     }
     .container-fluid{
         padding: 0;
+    }
+    #loginhref{
+        width: 80%;
+    }
+    .slogan{
+        font-size:15px;
     }
     
 }
