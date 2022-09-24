@@ -9,12 +9,12 @@ import { SendRequest } from '../../SendRequest.js';
 import { load } from '../../load.js';
 import { RatingTableConstructor } from './RatingTableConstructor.js';
 import { setYearsForm } from './setYearForm';
-import { getSubjectGroup } from './getSubjectGroup';
+import { getSubjectsGroup } from './getSubjectsGroup';
 
 
 group.addEventListener("change", function () {
     getRating();
-    getSubjectGroup(group.value,subject);
+    getSubjectsGroup(group.value,subject);
     
 });
 subject.addEventListener("change", function () {

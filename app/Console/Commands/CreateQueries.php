@@ -44,7 +44,7 @@ class {$name}Query{
     {
         $nameModel = $this->ask('Укажите име модели');
         $name = $this->ask('Введите название Query');
-        $path = "App\Http\Queries\\".$nameModel;
+        $path = "App\Queries\\".$nameModel;
         if (!file_exists($path)) {
             mkdir($path, 0700, true);
         }

@@ -46,10 +46,13 @@
                 <button class="nav-link" id="v-pills-hours-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hours"
                     type="button" role="tab" aria-controls="v-pills-hours" aria-selected="false">
                     Часы</button>
-                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                <button class="nav-link" id="v-pills-recod-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recod"
+                    type="button" role="tab" aria-controls="v-pills-recod" aria-selected="false">
+                    Аттестация</button>
+                {{-- <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
                     aria-selected="false">
-                    Рассылка</button>
+                    Рассылка</button> --}}
             </div>
             <div class="tab-content container-fluid" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-table" role="tabpanel"
@@ -63,6 +66,10 @@
                 <div class="tab-pane fade" id="v-pills-hours" role="tabpanel" aria-labelledby="v-pills-hours-tab"
                     tabindex="0" style='width:100%'>
                     @include('teacher.components.hours')
+                </div>
+                <div class="tab-pane fade" id="v-pills-recod" role="tabpanel" aria-labelledby="v-pills-recod-tab"
+                    tabindex="0" style='width:100%'>
+                    @include('teacher.components.attestations')
                 </div>
             </div>
         </div>

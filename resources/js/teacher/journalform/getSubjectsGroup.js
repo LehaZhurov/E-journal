@@ -6,9 +6,9 @@ import { Alert } from '../../Alert.js';
 
 //Получения списка предметов которые ведет 
 //данный преподователь у выбранной группы
-export function getSubjectGroup(id,block){
+export function getSubjectsGroup(id,block){
     load('body', 'Подгружаю список предметов',true)
-    SendRequest('GET', 'get/subject_group/'+id)
+    SendRequest('GET', 'get/subjects_group/'+id)
     .then(data => updateSubjectsList(JSON.parse(data)['data'],block))//Передаем сообщение от сервера
     .catch(err => Alert('Что то пошло не так','error'))
 }

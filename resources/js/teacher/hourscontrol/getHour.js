@@ -1,5 +1,5 @@
 import { SendRequest } from '../../SendRequest.js';
-import { getSubjectGroup } from '../journalform/getSubjectGroup';
+import { getSubjectsGroup } from '../journalform/getSubjectsGroup';
 import { load } from '../../load.js';
 
 
@@ -35,5 +35,5 @@ function CreateHourTable(data) {
 let group = document.getElementById('hour_group');
 group.addEventListener("change", function () {
     let subject = document.querySelector('#hour_subject');
-    getSubjectGroup(group.value,subject);
+    getSubjectsGroup(group.value,subject);
 });

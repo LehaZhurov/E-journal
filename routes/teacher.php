@@ -13,5 +13,6 @@ Route::post('/create/rating',               [RatingController::class, 'create'])
 Route::post('/update/rating',               [RatingController::class, 'update'])->name('teacher.updateRating');
 Route::post('/delete/rating',               [RatingController::class, 'delete'])->name('teacher.deleteRating');
 Route::get('/get/hours',                    [SubjectController::class, 'getSubjectForTeacher'])->name('teacher.getHour');
-Route::get('get/subject_group/{groupId}',   [GroupController::class, 'getSubject'])->name('teacher.getGetSubjectForGroup');
+Route::get('get/subjects_group/{groupId}',  [GroupController::class, 'getSubjects'])->name('teacher.getSubjectsForGroup');
+Route::get('get/users_group/{groupId}',     [GroupController::class, 'getUsers'])->name('teacher.getUsersForGroup');
 Route::post('patch/hour',                   [HourController::class, 'patch'])->name('teacher.patch');

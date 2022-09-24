@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Queries\Group\GetGroupsQuery;
 use App\Queries\Group\GetGroupsTeacherQuery;
-use App\Queries\Group\GetSubjectGroupForTeacherQuery;
+use App\Queries\Group\GetSubjectsGroupForTeacherQuery;
+use App\Queries\Group\GetUsersGroupQuery;
 use App\Queries\Rating\GetTeacherRatingQuery;
 use App\Http\Requests\Rating\GetRatingRequest;
 use App\Http\Resources\Rating\UserRatingsResource;
@@ -20,11 +21,14 @@ class TeacherController extends Controller
         //Список групп у которых ведет учитель
         $teacherGroups = GetGroupsTeacherQuery::find($teacherId);
         //Список предметов которые ведет учитель у определенной группы
-        $subjects = GetSubjectGroupForTeacherQuery::find($teacherGroups[0]->id, $teacherId);
+        $subjects = GetSubjectsGroupForTeacherQuery::find($teacherGroups[0]->id, $teacherId);
+        $students = GetUsersGroupQuery::find($teacherGroups[0]->id);
         return view('teacher.index',
-            ['groups' => $groups,
+            [
+                'groups' => $groups,
                 'subjects' => $subjects,
                 'teacherGroups' => $teacherGroups,
+                'students'=> $students,
             ]
         );
     }
