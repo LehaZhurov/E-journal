@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Queries\Group\GetSubjectGroupForTeacherQuery;
+use App\Queries\Group\GetSubjectGroupForTeacherQuery;
 use Illuminate\Support\Facades\Auth;
 use  App\Http\Resources\Subject\SubjectResource;
 class GroupController extends Controller

@@ -14,14 +14,15 @@ function CreateHourTable(data) {
     ratingTable.innerHTML = ' ';
     for (var i = 0; i < data.length; i++){
         let li = document.createElement('li');
-        li.setAttribute('class', 'list-group-item d-flex justify-content-between')
+        li.setAttribute('class', 'list-group-item row d-flex')
         li.appendChild(span(data[i]['subject']));
-        li.appendChild(span(data[i]['hours']));
+        li.appendChild(span(data[i]['hours'],'text-right'));
         ratingTable.appendChild(li);
     }
 
-    function span(text){
+    function span(text,classes = ''){
         let span = document.createElement('span');
+        span.setAttribute('class','col ' + classes)
         span.innerText = text;
         return span;
     }

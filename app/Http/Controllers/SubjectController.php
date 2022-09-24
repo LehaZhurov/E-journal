@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Queries\Subject\GetSubjectWithTheClockForTeacherQuery;
-use App\Http\Queries\Subject\GetSubjectWithTheClockForStudentQuery;
-use Illuminate\Support\Facades\Auth;
+use App\Queries\Subject\GetSubjectWithTheClockForStudentQuery;
+use App\Queries\Subject\GetSubjectWithTheClockForTeacherQuery;
 use App\Http\Resources\Subject\SubjectWithTheClockResource;
+use Illuminate\Support\Facades\Auth;
 
 class SubjectController extends Controller
 {
@@ -24,5 +24,5 @@ class SubjectController extends Controller
         $subjects = GetSubjectWithTheClockForStudentQuery::find($studentId);
         return SubjectWithTheClockResource::collection($subjects);
     }
-    
+
 }

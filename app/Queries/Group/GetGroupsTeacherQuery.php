@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Queries\Group;
+namespace App\Queries\Group;
 
 use App\Models\Subject;
 use Illuminate\Database\Eloquent\Collection;

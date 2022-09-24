@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Queries\Group;
+namespace App\Queries\Group;
 
 use App\Models\Group;
 use Illuminate\Database\Eloquent\Collection;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 class GetGroupsQuery
 {
     //Возвращает список групп с их учаcтниками
-    public static function get(): Collection | array 
+    public static function get(): Collection | array
     {
         $groups = Group::with('users')->get();
         return $groups;

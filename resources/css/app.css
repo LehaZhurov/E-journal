@@ -135,12 +135,20 @@ option:checked {
 }
 #hourstable{
     flex-direction:column;
+    height: 300px;
+    overflow-y:scroll;
 }
 .mg-5{
     margin:5px;
 }
 .nonescroll{
     overflow: hidden;
+}
+.row{
+    margin:0;
+}
+.hourstableheader{
+    margin-right: 17px;
 }
 #loginhref{
     background-color: var(--bg-green);

@@ -17,7 +17,7 @@ function CreateRatingTable(data) {
         let li = document.createElement('li');//Создания строки таблички
         li.setAttribute('class', 'list-group-item d-flex justify-content-between')
         //Элемент таблички
-        li.appendChild(span(data[i]['subject']));
+        li.appendChild(span(data[i]['subject'],'container-fluid'));
         //Элмент таблички
         li.appendChild(span(data[i]['value']));
         let date = data[i]['num_day']+"."+data[i]['num_month']+"."+data[i]['year'];
@@ -26,8 +26,9 @@ function CreateRatingTable(data) {
         ratingTable.appendChild(li);
     }
 
-    function span(text){
+    function span(text,classes = 'default'){
         let span = document.createElement('span');
+        span.setAttribute('class',classes);
         span.innerText = text;
         return span;
     }

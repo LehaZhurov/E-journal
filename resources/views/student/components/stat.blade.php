@@ -26,7 +26,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between container-fluid mg-5">
                 <span class="mg-5">№</span>
-                <span class="mg-5">Предмет</span>
+                <span class="mg-5 container-fluid">Предмет</span>
                 <span class="mg-5">Оценка</span>
                 <span class="mg-5">Дата</span>
                 {{-- <span>Предопователь</span> --}}

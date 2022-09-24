@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\Hour\PatchHourRequest;
 use App\Action\Hour\PatchHourAction;
+use App\Http\Requests\Hour\PatchHourRequest;
 use App\Http\Resources\Hour\HourResource;
+
 class HourController extends Controller
 {
-    public function patch(PatchHourRequest $request){
+    public function patch(PatchHourRequest $request)
+    {
         $groupId = $request->get('group');
         $subjectId = $request->get('subject');
         $hour = $request->get('hour');

@@ -5,9 +5,8 @@ import { getHour } from '../hourscontrol/getHour';
 
 
 export function updateHour(data){
-    load('body','Списываю часы',true)
+    load('body','Списываю часы',true);
     SendRequest('POST', 'patch/hour',data)
     .then(data => getHour())//Передаем сообщение от сервера
     .catch(err => console.log(err));
-    load('body','Списываю часы',false)
 }

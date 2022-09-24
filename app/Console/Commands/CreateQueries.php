@@ -23,7 +23,7 @@ class CreateQueries extends Command
     {
         $example =
 "<?php\r".
-"namespace App\Http\Queries\\".$nameModel.";\r".
+"namespace App\Queries\\".$nameModel.";\r".
 "use App\Models\\".$nameModel.";
 class {$name}Query{
         

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Queries\Rating;
+namespace App\Queries\Rating;
 
 use App\Models\Group;
 use Illuminate\Support\Collection;

@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
     {
         //Создание групп педагоги
         $this->teacherGroup = Group::factory()->state(['name' => 'Педагоги'])->create();
+        $this->studentOut   = Group::factory()->state(['name' => 'Выбывшие'])->create();
         //Создание ролей педагоги
         $this->teacherRole = Role::factory()->state(['name' => 'teacher'])->create();
         //Создание роли студент
