@@ -3,6 +3,7 @@
 namespace App\Http\Requests\RecordBook;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CreateRecordRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class CreateRecordRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,7 @@ class CreateRecordRequest extends FormRequest
     public function rules()
     {
         return [
-            'value'      => ['required', 'string'],
+            'value'      => ['required', 'string',Rule::in([5,4,3,2,'З','з','нб','НБ'])],
             'student_id' => ['required', 'int'],
             'teacher_id' => ['int'],
             'subject_id' => ['required', 'int'],

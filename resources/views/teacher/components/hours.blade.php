@@ -31,7 +31,7 @@
                     <span class  = "col text-right">Часы</span>
                 </li>
             </ul>
-            <ul class="list-group container-fluid" id = 'hourstable'>
+            <ul class="tablestat list-group container-fluid" id = 'hourstable'>
                 
             </ul>
         </div>

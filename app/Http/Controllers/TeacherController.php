@@ -10,7 +10,7 @@ use App\Queries\Rating\GetTeacherRatingQuery;
 use App\Http\Requests\Rating\GetRatingRequest;
 use App\Http\Resources\Rating\UserRatingsResource;
 use Illuminate\Support\Facades\Auth;
-
+use App\Queries\TypeAttestaion\GetTypeAttestationQuery;
 class TeacherController extends Controller
 {
     //Вывод страницы кабинета учителя
@@ -23,12 +23,14 @@ class TeacherController extends Controller
         //Список предметов которые ведет учитель у определенной группы
         $subjects = GetSubjectsGroupForTeacherQuery::find($teacherGroups[0]->id, $teacherId);
         $students = GetUsersGroupQuery::find($teacherGroups[0]->id);
+        $typeAttestaions = GetTypeAttestationQuery::find();
         return view('teacher.index',
             [
                 'groups' => $groups,
                 'subjects' => $subjects,
                 'teacherGroups' => $teacherGroups,
                 'students'=> $students,
+                'typeAttestaions' => $typeAttestaions
             ]
         );
     }

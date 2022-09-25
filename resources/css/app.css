@@ -133,7 +133,7 @@ option:checked {
     overflow-y: scroll;
     height:200px;
 }
-#hourstable{
+.tablestat{
     flex-direction:column;
     height: 300px;
     overflow-y:scroll;
@@ -185,9 +185,6 @@ option:checked {
     
 }
 @media screen and (max-width: 1000px) {
-    .list-group{
-        flex-direction: row;
-    }
     #header_form_journal{
         flex-direction: column;
         align-items: start;

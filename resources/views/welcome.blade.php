@@ -14,8 +14,14 @@
 <body id='body'>
     <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
         <img src="{{ asset('/storage/img/logo.png') }}" alt="">
-        <h1 class = 'slogan'>Современный-Молодёжный-Электронный журнал</h1>
-        <a href="/login" id = "loginhref">Войти</a>
+        <h1 class='slogan'>Современный-Молодёжный-Электронный журнал</h1>
+        @auth
+            <a href="/teacher/cabinet" id="loginhref">Войти</a>
+        @endauth
+
+        @guest
+            <a href="/login" id="loginhref">Войти</a>
+        @endguest
     </div>
     {{-- @vite(['resources/js/student/app.js']); --}}
 </body>

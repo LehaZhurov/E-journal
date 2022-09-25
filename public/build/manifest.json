@@ -8,7 +8,7 @@
     ]
   },
   "resources/js/teacher/app.js": {
-    "file": "assets/app.840db78f.js",
+    "file": "assets/app.6f946e52.js",
     "src": "resources/js/teacher/app.js",
     "isEntry": true,
     "imports": [
@@ -17,7 +17,7 @@
     ]
   },
   "resources/js/student/app.js": {
-    "file": "assets/app.bac1d55f.js",
+    "file": "assets/app.9cdd847f.js",
     "src": "resources/js/student/app.js",
     "isEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     "file": "assets/load.1f389728.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app.44fd8cf8.css",
+    "file": "assets/app.0ff0bb46.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }

@@ -9,6 +9,7 @@ use App\Models\Rating;
 use App\Models\Role;
 use App\Models\Subject;
 use App\Models\User;
+use App\Models\TypeAttestation;
 use Illuminate\Database\Seeder;
 use Leeto\MoonShine\Models\MoonshineUser;
 use Illuminate\Database\Eloquent\Collection;
@@ -29,8 +30,8 @@ class DatabaseSeeder extends Seeder
         $this->teacherRole = Role::factory()->state(['name' => 'teacher'])->create();
         //Создание роли студент
         $this->studentRole = Role::factory()->state(['name' => 'student'])->create();
-
-        $this->generateData();
+        $this->createTypeAttention();
+        $this->generateTestData();
 
         // Создание администратора на время разработки
         MoonshineUser::query()->create([
@@ -39,6 +40,12 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('lehaleha'),
         ]);
     }
+    private function createTypeAttention(){
+        TypeAttestation::factory()->state(['name' => 'Экзамен'])->create();
+        TypeAttestation::factory()->state(['name' => 'Зачет'])->create();
+        TypeAttestation::factory()->state(['name' => 'Дифзачет'])->create();
+    }
+
     //Возврощате id созданного учителя
     private function createTeacher(): int
     {
@@ -114,28 +121,31 @@ class DatabaseSeeder extends Seeder
         }
     }
 
-    private function generateData()
+    private function generateTestData()
     {
         $subjectsCount = 2;
         $studentsCount = 20;
-        for ($i = 0; $i < 2; $i++) {
+        for ($i = 0; $i < 1; $i++) {
             print('Начало круга генерации номер:'.$i).PHP_EOL;
             $teacherId = $this->createTeacher();
-            $subjects = $this->createSubjects($teacherId, $subjectsCount);
-            $groupId = $this->createStudentGroup($subjects);
-            $subjects = Subject::query();
-            $subjectsCountForDB = $subjects->count();
-            $subjects = $subjects->get();
-            $students = $this->createStudents($studentsCount, $groupId);
-            for($j = 0; $j < $studentsCount; $j++){
-                $subjectId = $subjects[rand(0,$subjectsCountForDB -1)]->id;
-                print($subjectId);
-                $studentId = $students[$j]->id;
-                $ratings = $this->createRating($teacherId,$subjectId,$studentId,3);
-            }
-            for($k = 0; $k < $subjectsCountForDB; $k++){
-                $subjectId = $subjects[$k]->id;
-                $hours = $this->createHour($subjectId,$groupId);
+            //Кол-во групп у которых будет вести преподователь
+            for($f = 0; $f < 2 ; $f ++){
+                $subjects = $this->createSubjects($teacherId, $subjectsCount);
+                $groupId = $this->createStudentGroup($subjects);
+                $subjects = Subject::query();
+                $subjectsCountForDB = $subjects->count();
+                $subjects = $subjects->get();
+                $students = $this->createStudents($studentsCount, $groupId);
+                for($j = 0; $j < $studentsCount; $j++){
+                    $subjectId = $subjects[rand(0,$subjectsCountForDB -1)]->id;
+                    print($subjectId);
+                    $studentId = $students[$j]->id;
+                    $ratings = $this->createRating($teacherId,$subjectId,$studentId,3);
+                }
+                for($k = 0; $k < $subjectsCountForDB; $k++){
+                    $subjectId = $subjects[$k]->id;
+                    $hours = $this->createHour($subjectId,$groupId);
+                }
             }
         }
     }

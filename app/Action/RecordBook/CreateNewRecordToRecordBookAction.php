@@ -8,6 +8,12 @@ class CreateNewRecordToRecordBookAction
 
     public static function execute(array $recordData): RecordBook
     {
+        $record = RecordBook::query()
+        ->where('subject_id',$recordData['subject_id'])
+        ->where('student_id', $recordData['student_id']);
+        if($record->exists()){
+            return $record->first();
+        }
         $record = new RecordBook();
         $record->value = $recordData['value'];      
         $record->student_id = $recordData['student_id']; 
