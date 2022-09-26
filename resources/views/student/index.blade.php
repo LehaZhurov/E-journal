@@ -30,10 +30,6 @@
                                 this.closest('form').submit();">Выйти</a>
                         </form>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Поиск</button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -50,12 +46,12 @@
                     aria-selected="false">
                     Часы
                 </button>
-                {{-- <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                <button class="nav-link" id="v-pills-records-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-records" type="button" role="tab" aria-controls="v-pills-records"
                     aria-selected="false">
-                    Группы
+                    Зачетка
                 </button>
-                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                {{-- <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
                     aria-selected="false">
                     Рассылка
@@ -71,12 +67,13 @@
                 tabindex="0" style='width:100%'>
                 @include('student.components.hours')
             </div>
-            {{-- <div class="tab-content container-fluid" id="v-pills-tabContent">
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+            <div class="tab-content container-fluid" id="v-pills-tabContent">
+                <div class="tab-pane fade" id="v-pills-records" role="tabpanel" aria-labelledby="v-pills-records-tab"
                     tabindex="0" style = 'width:100%'>
-                    @include('teacher.components.group')
+                    @include('student.components.recordbook')
                 </div>
             </div>
+            {{--
                 <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
                     tabindex="0">...</div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"

@@ -80,7 +80,6 @@ function AddIdToTheRatingForm(data,form){
 function appendNewRating(form){
     let UserRatings = window.journal.UserRatings;
     for(let i = 0; i < UserRatings.length; i++){
-        console.log(form);
         if(UserRatings[i].id == form.elements.user_id.value){
             for(let j = 0; j < UserRatings[i].ratings.length;j++){
                 let rating = UserRatings[i].ratings[j];

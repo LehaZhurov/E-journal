@@ -15,7 +15,7 @@ class GetStudentRatingQuery
             ->join('users', 'ratings.teacher_id', '=', 'users.id')
             ->join('subjects', 'ratings.subject_id', '=', 'subjects.id')
             ->select('ratings.*', 'users.name as teacher_name', 'subjects.name as subject_name')
-            ->orderBy('created_at')
+            ->orderBy('ratings.created_at')
             ->offset($offset)
             ->limit($limit);
         return $ratings->get();

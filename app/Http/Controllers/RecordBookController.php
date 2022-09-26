@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Action\RecordBook\CreateNewRecordToRecordBookAction;
+use App\Action\RecordBook\DeleteRecordAction;
 use App\Http\Requests\RecordBook\CreateRecordRequest;
+use App\Http\Resources\EmptyResource;
+use App\Http\Resources\Record\AttestationResource;
 use App\Http\Resources\Record\RecordResource;
 use App\Queries\RecordBook\GetAttesationGroupQuery;
-use App\Http\Resources\Record\AttestationResource;
 use Illuminate\Support\Facades\Auth;
 
 class RecordBookController extends Controller
@@ -20,9 +22,10 @@ class RecordBookController extends Controller
         return new RecordResource($record);
     }
     //Для измененеия записи в зачетке
-    public function update()
+    public function delete(int $id)
     {
-
+        $result = DeleteRecordAction::execute($id);
+        return new EmptyResource($result);
     }
     //Метод возвращает список аттестаций по id группы
     public function attestationGroup(int $groupId)

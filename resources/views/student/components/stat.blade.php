@@ -24,15 +24,14 @@
     <div class="container-fluid " id='rating_history'>
         <h2>История оценок</h2>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between container-fluid mg-5">
-                <span class="mg-5">№</span>
-                <span class="mg-5 container-fluid">Предмет</span>
-                <span class="mg-5">Оценка</span>
-                <span class="mg-5">Дата</span>
+            <li class="list-group-item d-flex row">
+                <span class="mg-5 col text-left">Предмет</span>
+                <span class="mg-5 col text-center">Оценка</span>
+                <span class="mg-5 col text-right">Дата</span>
                 {{-- <span>Предопователь</span> --}}
             </li>
         </ul>
-        <ul class="list-group list-group-numbered flex-column" id='ratingtable'>
+        <ul class="list-group list-group flex-column row tablestat" id='ratingtable'>
 
         </ul>
     </div>

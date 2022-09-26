@@ -1,13 +1,13 @@
 
 
 //Отправка Ajax запросов к серверу
-export function SendRequest(method,url,body = null){
+export function SendRequest(method,url,body = null,debug = false){
 	return new Promise ((resolve,reject)=>{
 		const xhr = new XMLHttpRequest();
 		xhr.open(method,url,true)
 		xhr.withCredentials = true;
 		xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content )
-		if(xhr.readyState == 1){
+		if(xhr.readyState == 1 && debug){
 			console.log('Отправка запроса '+method+' запроса на ' + url);
 		}
 		xhr.onload = () =>{

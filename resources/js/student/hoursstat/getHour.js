@@ -1,11 +1,11 @@
 import { SendRequest } from '../../SendRequest.js';
-
+import { Alert } from '../../Alert.js';
 
 //Получени списка предметов с групами и часами по ним
 export function getHour(){
     SendRequest('GET', 'get/hours')
     .then(data => CreateHourTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
-    .catch(err => console.log(err));
+    .catch(err => Alert('Что то пошло не так', 'error'));
 }
 
 //Создание таблички с часами

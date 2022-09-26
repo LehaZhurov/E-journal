@@ -7,6 +7,7 @@ let journal;
 
 import { SendRequest } from '../../SendRequest.js';
 import { load } from '../../load.js';
+import { Alert } from '../../Alert.js';
 import { RatingTableConstructor } from './RatingTableConstructor.js';
 import { setYearsForm } from './setYearForm';
 import { getSubjectsGroup } from './getSubjectsGroup';
@@ -42,7 +43,7 @@ export function getRating() {
     let formData = new FormData(data_form);//Создаем объект FormData и передаем в него данные из формы
     SendRequest('POST', 'get/rating', formData)
         .then(data => GenerateTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
-        .catch(err => console.log(err));
+        .catch(err => Alert('Что то пошло не так', 'error'));
 }
 
 let TableConstructor;

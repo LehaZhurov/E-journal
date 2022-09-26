@@ -34,6 +34,9 @@
         </form>
         <div class="container-fluid">
             <h2>Список аттестаций <span id="groupnamerecord">группы</span></h2>
+            <div id="HourHelpBlock" class="form-text">
+                Удалить аттестацию можно дважды кликнув на неё
+            </div>
         </div>
         <div class="container-fluid ">
             <ul class="list-group container-fluid">
