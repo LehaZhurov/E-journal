@@ -52,4 +52,11 @@ class Group extends Model
     {
         return $this->belongsToMany(Subject::class);
     }
+
+
+    public function delete()
+    {
+       User::query()->where('group_id',$this->id)->delete();
+       return parent::delete();
+    }
 }

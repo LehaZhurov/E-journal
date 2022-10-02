@@ -8,7 +8,7 @@
     ]
   },
   "resources/js/teacher/app.js": {
-    "file": "assets/app.965c1442.js",
+    "file": "assets/app.2180a1ca.js",
     "src": "resources/js/teacher/app.js",
     "isEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     "file": "assets/load.6385fe31.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app.0ff0bb46.css",
+    "file": "assets/app.1fe175b0.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }

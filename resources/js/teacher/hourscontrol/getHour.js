@@ -16,7 +16,7 @@ function CreateHourTable(data) {
     ratingTable.innerHTML = ' ';
     for (var i = 0; i < data.length; i++){
         let li = document.createElement('li');
-        li.setAttribute('class', 'list-group-item row d-flex')
+        li.setAttribute('class', 'list-group-item row d-flex paddingnull')
         li.appendChild(span(data[i]['subject']));
         li.appendChild(span(data[i]['group'],'text-center'));
         li.appendChild(span(data[i]['hours'],'text-right'));

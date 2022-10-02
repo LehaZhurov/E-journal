@@ -42,7 +42,6 @@
             <ul class="list-group container-fluid">
                 <li class="list-group-item d-flex row container-fluid hourstableheader" >
                     <span class  = "col text-left">Предмет</span>
-                    <span class  = "col text-center">Тип</span>
                     <span class  = "col text-center">Группа</span>
                     <span class  = "col text-center">Оценка</span>
                     <span class  = "col text-right">Студент</span>

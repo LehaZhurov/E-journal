@@ -7,12 +7,13 @@
     --txt-color-white: white;
     --bg-green: #3d6b30;
 }
-h2{
+
+h2 {
     margin-left: 15px;
-    font-size:20px;
+    font-size: 20px;
 }
 
-#work_obl{
+#work_obl {
     margin: 0px 20px 0px 20px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
         -23px 0 20px -23px rgba(0, 0, 0, .8),
@@ -20,6 +21,7 @@ h2{
         0 0 40px rgba(0, 0, 0, .1) inset;
     min-height: 900px;
 }
+
 .tx-white {
     color: var(--bs-navbar-active-color);
 }
@@ -41,7 +43,8 @@ h2{
 a {
     color: var(--txt-color-white);
 }
-a:hover{
+
+a:hover {
     color: var(--txt-color-white);
 }
 
@@ -71,128 +74,187 @@ button {
 #header_form {
     margin-left: 10px;
 }
-select{
-    border:none;
-    padding-left:0px;
-    outline:none;
+
+select {
+    border: none;
+    padding-left: 0px;
+    outline: none;
 }
-select:hover{
+
+select:hover {
     border-color: var(--bg-green);
 }
-input{
+
+input {
     border-color: var(--bg-green);
-    outline:none;
+    outline: none;
 }
-option:checked { 
-    color: black; 
+
+option:checked {
+    color: black;
 }
-#header_form_journal{
-    align-items:center;
+
+#header_form_journal {
+    align-items: center;
 }
-.rating_input{
-    padding:0;
-    width:100%;
-    height:40px;
-    text-align:center;
+
+.rating_input {
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    text-align: center;
 }
-.null_padding{
+
+.null_padding {
     padding: 0px;
 }
-#alertblock{
+
+#alertblock {
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 1000;
 }
+
 .fade:not(.show) {
     opacity: 0;
     display: none;
 }
-#v-pills-groupsList{
-    width:100%;
+
+#v-pills-groupsList {
+    width: 100%;
 }
-.scroll_journal{
+
+.scroll_journal {
     width: 100%;
     display: flex;
     justify-content: center
 }
-.bg-green{
-    background-color:var(--bg-green);
-    color:aliceblue;
+
+.bg-green {
+    background-color: var(--bg-green);
+    color: aliceblue;
 }
-.border-green{
-    border-color:var(--bg-green);
+
+.border-green {
+    border-color: var(--bg-green);
 }
-.nav-pills .nav-link.active{
+
+.nav-pills .nav-link.active {
     background-color: var(--bg-green);
 }
-.accordion-button:not(.collapsed)::after{
+
+.accordion-button:not(.collapsed)::after {
     background-image: none;
 }
-.scroll{
+
+.scroll {
     overflow-y: scroll;
-    height:200px;
+    height: 200px;
 }
-.tablestat{
-    flex-direction:column;
+
+.tablestat {
+    flex-direction: column;
     height: 300px;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
-.mg-5{
-    margin:5px;
+
+.mg-5 {
+    margin: 5px;
 }
-.nonescroll{
+
+.nonescroll {
     overflow: hidden;
 }
-.row{
-    margin:0;
+
+.row {
+    margin: 0;
 }
-.hourstableheader{
+
+.hourstableheader {
     margin-right: 17px;
 }
-#loginhref{
+
+#loginhref {
     background-color: var(--bg-green);
-    width:40%;
-    padding:20px;
-    text-align:center;
-    font-size:30px;
-    border-radius:20px;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 20px;
     margin-top: 30px;
 }
-.slogan{
-    font-size:30px;
+
+.slogan {
+    font-size: 30px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #fff var(--bg-green);
+}
+
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    height: 12px;
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bg-green);
+    border-radius: 5px;
+    border: 3px solid #fff;
+}
+#journal_table{
+    margin-bottom:40px;
+}
+.paddingnull{
+    padding:0;  
 }
 @media screen and (max-width: 1200px) {
-    .scroll_journal_content{
-        width:1100px;
+    .scroll_journal_content {
+        width: 1100px;
     }
-    .scroll_journal{
+
+    .scroll_journal {
         overflow-x: scroll;
         display: block;
     }
-    #work_obl{
+
+    #work_obl {
         margin: 0;
+        box-shadow: none;
+        min-height: 400px;
     }
-    .container-fluid{
+
+    .container-fluid {
         padding: 0;
     }
-    #loginhref{
+
+    #loginhref {
         width: 80%;
     }
-    .slogan{
-        font-size:15px;
+
+    .slogan {
+        font-size: 15px;
     }
     
+
 }
+
 @media screen and (max-width: 1000px) {
-    #header_form_journal{
+    #header_form_journal {
         flex-direction: column;
         align-items: start;
     }
-    select{
+
+    select {
         width: 100%;
     }
 }
-@media screen and (max-width:600px) {
-    
-}
+
+@media screen and (max-width:600px) {}
