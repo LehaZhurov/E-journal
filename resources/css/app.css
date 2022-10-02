@@ -7,7 +7,13 @@
     --txt-color-white: white;
     --bg-green: #3d6b30;
 }
-
+body {
+    font-size:20px;
+}
+option{
+    font-size:20px;
+    text-align: center;
+}
 h2 {
     margin-left: 15px;
     font-size: 20px;
@@ -216,6 +222,12 @@ option:checked {
     padding:0;  
 }
 @media screen and (max-width: 1200px) {
+    body {
+        font-size:15px;
+    }
+    option{
+        font-size:15px;
+    }
     .scroll_journal_content {
         width: 1100px;
     }
