@@ -3,8 +3,8 @@
 namespace App\Action\Rating;
 
 use App\Models\Rating;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Collection;
+use App\Bot\Notifications\UpdateRating;
+
 class UpdateRatingAction
 {
     //Обновление оценки по её id
@@ -13,6 +13,7 @@ class UpdateRatingAction
         $rating = Rating::findOrFail($id);
         $rating->value = $value;
         $rating->save();
+        UpdateRating::notify($rating->id,$rating->student_id);
         return $rating;
     }
 }

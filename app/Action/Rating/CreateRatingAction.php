@@ -1,12 +1,15 @@
 <?php
 namespace App\Action\Rating;
+
+use App\Bot\Notifications\NewRating;
 use App\Models\Rating;
 use Illuminate\Support\Facades\Auth;
-class CreateRatingAction{
-        
+
+class CreateRatingAction
+{
 
     //Созадет оценку
-    public static function execute(array $data) : Rating 
+    public static function execute(array $data): Rating
     {
         $teacherId = Auth::user()->id;
         $rating = new Rating();
@@ -18,7 +21,9 @@ class CreateRatingAction{
         $rating->year = $data['year'];
         $rating->value = $data['value'];
         $rating->save();
+        //Отправка уведомления
+        NewRating::notify($rating->id, $data['user_id']);
         return $rating;
-    }    
-        
+    }
+
 }
