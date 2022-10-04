@@ -19,7 +19,7 @@ Alpine.start();
 window.onload = () => {
     setTimeout(getRating(), 3000);
     getHour();
-    getRecords( document.getElementById('record_group').value );
+    getRecords(document.getElementById('record_group').value);
 }
 //Кнопка для списывания часов
 document.getElementById('writeoffhoursbtn').onclick = () => {

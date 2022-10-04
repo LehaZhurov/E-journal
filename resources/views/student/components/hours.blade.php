@@ -5,12 +5,12 @@
         </div>
         <div class="container-fluid ">
             <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between container-fluid" >
+                <li class="list-group-item d-flex justify-content-between container-fluid">
                     <span class="mg-5">Предмет</span>
                     <span class="mg-5">Часы</span>
                 </li>
             </ul>
-            <ul class="list-group" id = 'hourstable'>
+            <ul class="list-group" id='hourstable'>
 
             </ul>
         </div>

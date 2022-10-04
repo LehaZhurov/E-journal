@@ -14,8 +14,8 @@ export function setYearsForm(block) {
         let date = new Date();
         let option = document.createElement('option');
         let year = date.getFullYear() + i;
-        if(i == 0){
-            option.setAttribute('selected','')
+        if (i == 0) {
+            option.setAttribute('selected', '')
         }
         option.setAttribute('value', year);
         option.innerText = year;

@@ -15,8 +15,8 @@ import { getSubjectsGroup } from './getSubjectsGroup';
 
 group.addEventListener("change", function () {
     getRating();
-    getSubjectsGroup(group.value,subject);
-    
+    getSubjectsGroup(group.value, subject);
+
 });
 subject.addEventListener("change", function () {
     getRating();

@@ -35,12 +35,12 @@ export let RatingTableConstructor = class {
         }
     }
     //Добовление пустой ячейки с новой датой к каждому студенту 
-    appendNewDateRating(date){
+    appendNewDateRating(date) {
         let UserRatings = this.UserRatings;
         for (let i = 0; i < UserRatings.length; i++) {
             let ratings = UserRatings[i]['ratings']
-            UserRatings[i]['ratings'].push({'num_day':date})
-            UserRatings[i]['ratings'] = ratings.sort(function (a, b) {    
+            UserRatings[i]['ratings'].push({ 'num_day': date })
+            UserRatings[i]['ratings'] = ratings.sort(function (a, b) {
                 return a['num_day'] - b['num_day'];
             })
 
@@ -83,9 +83,9 @@ export let RatingTableConstructor = class {
         for (let j = 0; j < UserRatings.length; j++) {
             let ratings = UserRatings[j]['ratings']
             for (let i = 0; i < this.dateArray.length; i++) {
-                    let date = this.dateArray[i];
-                    ratings.push({ 'num_day': date })
-                }
+                let date = this.dateArray[i];
+                ratings.push({ 'num_day': date })
+            }
             //Сортировка массива с рейтингом у каждого пользователя по возростанию дней
             UserRatings[j]['ratings'] = ratings.sort(function (a, b) {
                 return a['num_day'] - b['num_day'];
@@ -99,11 +99,11 @@ export let RatingTableConstructor = class {
                     let rating = ratings[i];
                     for (var k = 0; k < this.dateArray.length; k++) {
                         let date = this.dateArray[k];
-                        if(typeof (rating) === 'undefined'){
+                        if (typeof (rating) === 'undefined') {
                             continue;
                         }
-                        if(date == rating['num_day'] && rating['value']){
-                            delete ratings[i+1];
+                        if (date == rating['num_day'] && rating['value']) {
+                            delete ratings[i + 1];
                         }
                     }
                 }

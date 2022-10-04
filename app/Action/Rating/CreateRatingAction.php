@@ -22,7 +22,7 @@ class CreateRatingAction
         $rating->value = $data['value'];
         $rating->save();
         //Отправка уведомления
-        NewRating::notify($rating->id, $data['user_id']);
+        NewRating::notify($rating->id);
         return $rating;
     }
 

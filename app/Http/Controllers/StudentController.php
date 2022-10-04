@@ -6,6 +6,7 @@ use App\Queries\Rating\CountTruancyStudentForYearQuery;
 use App\Queries\Rating\CountTruancyStudentQuery;
 use App\Queries\Rating\GetStudentRatingQuery;
 use App\Queries\RecordBook\GetRercordsStudentQuery;
+use App\Queries\TelegaramKey\GetKeyQuery;
 use App\Http\Resources\Rating\StudentRatingResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Auth;
@@ -20,11 +21,13 @@ class StudentController extends Controller
         $truancyForYear = CountTruancyStudentForYearQuery::get($studentId, date('Y')); //Полчение всех прогулов за год
         $recordsFromRecordsBook = GetRercordsStudentQuery::find($studentId);
         $user = Auth::user(); //Получение данных пользователя
+        $telegramChatId = GetKeyQuery::find($studentId);
         return view('student.index', [
             'allTruancy' => $allTruancy,
             'truancyForYear' => $truancyForYear,
             'user' => $user,
-            'records' => $recordsFromRecordsBook
+            'records' => $recordsFromRecordsBook,
+            'telegramChatId' => $telegramChatId, 
         ]);
     }
     //Получение оценок студента с пагинацией

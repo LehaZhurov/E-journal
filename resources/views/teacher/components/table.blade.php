@@ -52,8 +52,8 @@
     </form>
     <div class="scroll_journal">
         <div id="journal_table" class="scroll_journal_content">
-    
+
         </div>
     </div>
-    </div>
+</div>
 </div>

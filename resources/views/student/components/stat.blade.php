@@ -21,6 +21,7 @@
             </li>
         </ul>
     </div>
+    @include('student.components.telegrmacode')
     <div class="container-fluid " id='rating_history'>
         <h2>История оценок</h2>
         <ul class="list-group list-group-flush">
