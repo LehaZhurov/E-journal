@@ -143,7 +143,7 @@ export let RatingTableConstructor = class {
             <ul class="list-group list-group-horizontal-sm flex-row" style = 'text-alight:center;' id = "` + stringId + `">` + this.getItemTable('Дата/ФИО', '300px') + `</ul>
         `;
         this.dateString = document.querySelector('#dateString');//Строка где указаны даты
-        for (let i = 0; i < this.tableSize; i++) {
+        for (let i = 0; i <= this.tableSize; i++) {
             if (typeof (this.dateArray[i]) != 'undefined') {
                 this.dateString.innerHTML += this.getItemTable(this.dateArray[i]);
             } else {
