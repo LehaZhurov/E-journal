@@ -21,7 +21,7 @@ function CreateRecordsTable(data) {
     for (var i = 0; i < data.length; i++) {
         let li = document.createElement('li');
         li.setAttribute('class', 'list-group-item row d-flex paddingnull')
-        li.appendChild(span(data[i]['subject']));
+        li.appendChild(span(data[i]['subject'],'text-left'));
         li.appendChild(span(data[i]['group'], 'text-center'));
         li.appendChild(span(data[i]['value'], 'text-center'));
         li.appendChild(span(data[i]['name'], 'text-right'));

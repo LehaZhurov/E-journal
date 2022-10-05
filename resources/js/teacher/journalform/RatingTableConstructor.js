@@ -25,7 +25,9 @@ export let RatingTableConstructor = class {
     //которе буду выставлены за данный день
     appendDate(value, update = false) {
         if (!this.dateArray.includes(value)) {
+            let averageRatingDate = this.dateArray.pop();
             this.dateArray.push(value);
+            this.dateArray.push(averageRatingDate);
             this.dateArray = this.dateArray.sort(function (a, b) {
                 return a - b;
             })
@@ -39,11 +41,11 @@ export let RatingTableConstructor = class {
         let UserRatings = this.UserRatings;
         for (let i = 0; i < UserRatings.length; i++) {
             let ratings = UserRatings[i]['ratings']
-            UserRatings[i]['ratings'].push({'num_day':date})
-            UserRatings[i]['ratings'] = ratings.sort(function (a, b) {    
+            ratings.push({'num_day':date})
+            ratings = ratings.sort(function (a, b) {    
                 return a['num_day'] - b['num_day'];
             })
-
+            UserRatings[i]['ratings'] = ratings
         }
         this.UserRatings = UserRatings;
         this.AppendDateString();
@@ -73,7 +75,6 @@ export let RatingTableConstructor = class {
                     return a['num_day'] - b['num_day'];
                 })
             }
-
         }
         //Сортировка дней по возростанию
         this.dateArray = this.dateArray.sort(function (a, b) {
@@ -109,11 +110,8 @@ export let RatingTableConstructor = class {
                 }
                 ratings = ratings.filter((_, index) => ratings.hasOwnProperty(index));
                 UserRatings[j]['ratings'] = ratings;
-                let averageRating = this.averageRating(ratings);
-                UserRatings[j]['ratings'].push({'value': averageRating});
             }
         }
-
         this.UserRatings = UserRatings;
         this.AppendDateString();
         this.AppendRatings(UserRatings)
@@ -140,7 +138,7 @@ export let RatingTableConstructor = class {
         let stringId = 'dateString'
         //Добавление вернхний строки в таблицу
         this.journal.innerHTML += `
-            <ul class="list-group list-group-horizontal-sm flex-row" style = 'text-alight:center;' id = "` + stringId + `">` + this.getItemTable('Дата/ФИО', '300px') + `</ul>
+            <ul class="list-group list-group-horizontal-sm flex-row ul-bg-gray" style = 'text-alight:center;' id = "` + stringId + `">` + this.getItemTable('ФИО/День', '300px') + `</ul>
         `;
         this.dateString = document.querySelector('#dateString');//Строка где указаны даты
         for (let i = 0; i <= this.tableSize; i++) {
@@ -176,7 +174,7 @@ export let RatingTableConstructor = class {
     //Пусто элмент журнала
     getItemTable(text = '', widht = '40px') {
         if (text == '') {
-            return '<li class="list-group-item"  style = "color:white;width:' + widht + ';">1</li>'
+            return '<li class="list-group-item"  style = "color:white;width:' + widht + ';"></li>'
         } else {
             return '<li class="list-group-item"  style = "width:' + widht + '">' + text + '</li>'
         }
