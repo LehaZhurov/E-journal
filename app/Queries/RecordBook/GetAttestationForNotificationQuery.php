@@ -8,7 +8,8 @@ class GetAttestationForNotificationQuery
 
     public static function find(int $attestationId): RecordBook
     {
-        $attestation = RecordBook::find($attestationId)
+        $attestation = RecordBook::query()
+            ->where('record_books.id',$attestationId)
             ->join('users', 'record_books.teacher_id', '=', 'users.id')
             ->join('subjects', 'record_books.subject_id', '=', 'subjects.id')
             ->join('telegram_keys', 'record_books.student_id', '=', 'telegram_keys.user_id')
