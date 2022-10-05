@@ -109,12 +109,29 @@ export let RatingTableConstructor = class {
                 }
                 ratings = ratings.filter((_, index) => ratings.hasOwnProperty(index));
                 UserRatings[j]['ratings'] = ratings;
+                let averageRating = this.averageRating(ratings);
+                UserRatings[j]['ratings'].push({'value': averageRating});
             }
         }
+
         this.UserRatings = UserRatings;
         this.AppendDateString();
         this.AppendRatings(UserRatings)
         this.appendFunction('ratings', EditRating)
+    }
+    averageRating(ratings){
+
+        let sumrating = 0;
+        let countrating = 0;
+        for (var i = 0; i < ratings.length; i++) {
+            let rating = ratings[i];
+            if(typeof (rating['value']) !== 'undefined'){
+                sumrating = sumrating + Number(rating['value']);
+                countrating = countrating + 1;
+            }
+        }
+        let averageRating = sumrating / countrating;
+        return averageRating.toFixed(1);
     }
     //Вывод строки с датами
     AppendDateString() {
@@ -144,7 +161,7 @@ export let RatingTableConstructor = class {
             tableString.innerHTML += this.getItemTable(UserRatings[i]['name'], '300px');//Вывод имеени
             let userId = UserRatings[i]['id']
             //Вывод строки с оценками данного пользователя
-            for (let j = 0; j < this.tableSize; j++) {//Перебор оценок пользователя
+            for (let j = 0; j <= this.tableSize; j++) {//Перебор оценок пользователя
                 let rating = UserRatings[i]['ratings'][j];
                 if (typeof (rating) !== 'undefined') {//Если запись о оценки с индксом j cущ-ет 
                     //Вывод оценки 
