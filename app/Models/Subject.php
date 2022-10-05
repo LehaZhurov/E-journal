@@ -35,6 +35,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|Subject whereDeletedAt($value)
  * @method static \Illuminate\Database\Query\Builder|Subject withTrashed()
  * @method static \Illuminate\Database\Query\Builder|Subject withoutTrashed()
+ * @property int $user_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|Hour[] $hours
+ * @property-read int|null $hours_count
  */
 
 class Subject extends Model

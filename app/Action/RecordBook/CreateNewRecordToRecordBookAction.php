@@ -2,6 +2,7 @@
 namespace App\Action\RecordBook;
 
 use App\Models\RecordBook;
+use App\Bot\Notifications\ResultAttestation;
 
 class CreateNewRecordToRecordBookAction
 {
@@ -21,6 +22,7 @@ class CreateNewRecordToRecordBookAction
         $record->subject_id = $recordData['subject_id'];
         $record->type_attestation_id = $recordData['type_id'];
         $record->save();
+        ResultAttestation::notify($record->id);
         return $record;
     }
 

@@ -36,7 +36,7 @@ class NewRating
         string $numMonth,
         string $numYear,
     ) {
-        $text = "Вам поставили *{$rating}* за {$numDay}.{$numMonth}.{$numYear}.\r\n{$subject}/{$teacherName}";
+        $text = "Вам поставили *{$rating}* за {$numDay}.{$numMonth}.{$numYear};\r\n{$subject} | {$teacherName}";
         return $text;
     }
 

@@ -32,7 +32,7 @@
                 {{-- <span>Предопователь</span> --}}
             </li>
         </ul>
-        <ul class="list-group list-group flex-column row tablestat" id='ratingtable'>
+        <ul class="list-group list-group flex-column tablestat" id='ratingtable'>
 
         </ul>
     </div>

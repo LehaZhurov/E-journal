@@ -36,7 +36,7 @@ class UpdateRating
         string $numMonth,
         string $numYear,
     ) {
-        $text = "Вам изменили оценку на *{$rating}* за {$numDay}.{$numMonth}.{$numYear}.\r\n{$subject}/{$teacherName}";
+        $text = "Вам изменили оценку на *{$rating}* за {$numDay}.{$numMonth}.{$numYear};\r\n{$subject} | {$teacherName}";
         return $text;
     }
 
