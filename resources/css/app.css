@@ -221,6 +221,10 @@ option:checked {
 .paddingnull{
     padding:0;  
 }
+.list-group-item{
+    padding:0;
+    text-align:center;
+}
 @media screen and (max-width: 1200px) {
     body {
         font-size:15px;
