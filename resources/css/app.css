@@ -5,15 +5,20 @@
 
 :root {
     --txt-color-white: white;
-    --bg-green: #3d6b30;
+    --bg-green: #3b692e;
+    --bg-gray: rgb(1, 110, 34);
 }
 body {
+    font-size:20px;
+}
+select{
     font-size:20px;
 }
 option{
     font-size:20px;
     text-align: center;
 }
+
 h2 {
     margin-left: 15px;
     font-size: 20px;
@@ -35,7 +40,13 @@ h2 {
 .bg-green {
     background-color: var(--bg-green)
 }
-
+.bg-gray{
+    background-color: var(--bg-gray)
+}
+.ul-bg-gray > li{
+    background-color: var(--bg-green);
+    color: var(--txt-color-white)
+}
 .nav-pills .nav-link.active {
     background-color: var(--bg-green);
     color: var(--txt-color-white);
@@ -227,6 +238,9 @@ option:checked {
 }
 @media screen and (max-width: 1200px) {
     body {
+        font-size:15px;
+    }
+    select{
         font-size:15px;
     }
     option{
