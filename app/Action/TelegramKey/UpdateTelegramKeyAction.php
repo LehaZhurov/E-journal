@@ -7,9 +7,9 @@ use App\Models\TelegramKey;
 class UpdateTelegramKeyAction
 {
 
-    public static function execute(int $keyId, int $key): TelegramKey
+    public static function execute(int $userId, int $key): TelegramKey
     {
-        $updatedKey = TelegramKey::find($keyId);
+        $updatedKey = TelegramKey::where('user_id',$userId)->first();
         $updatedKey->chat_id = $key;
         $updatedKey->save();
         UpdateCodeSuccess::notify($updatedKey->chat_id);
