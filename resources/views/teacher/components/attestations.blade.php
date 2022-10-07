@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
-    <div class="container-fluid" style='width:94%'>
+    <div class="container-fluid zero-padding" style='width:94%'>
         <form action="#" id='record'>
             <label for="record_value" class="form-label">Оценка/Зачет/Не аттестован</label>
             <input type="text" id="record_value" name = 'value' class="form-control" aria-describedby="recordhelp" placeholder='Значение'>
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="container-fluid ">
-            <ul class="list-group container-fluid">
+            <ul class="list-group container-fluid zero-padding">
                 <li class="list-group-item d-flex row container-fluid hourstableheader" >
                     <span class  = "col text-left">Предмет</span>
                     <span class  = "col text-center">Группа</span>
@@ -47,7 +47,7 @@
                     <span class  = "col text-right">Студент</span>
                 </li>
             </ul>
-            <ul class="tablestat list-group container-fluid" id = 'recordstable'>
+            <ul class="tablestat list-group container-fluid zero-padding" id = 'recordstable'>
                 
             </ul>
         </div>
