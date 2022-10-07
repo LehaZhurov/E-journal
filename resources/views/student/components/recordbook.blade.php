@@ -11,9 +11,9 @@
             <ul class="tablestat list-group container-fluid" id='recordstable'>
                 @foreach ($records as $record)
                     <li class="list-group-item d-flex row container-fluid">
-                        <span class="col text-left">{{ $record->subject_name }}</span>
+                        <span class="col text-center">{{ $record->subject_name }}</span>
                         <span class="col text-center">{{ $record->type_attestation_name }}</span>
-                        <span class="col text-right">{{ $record->value }}</span>
+                        <span class="col text-center">{{ $record->value }}</span>
                     </li>
                 @endforeach
             </ul>
