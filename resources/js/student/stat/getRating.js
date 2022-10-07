@@ -12,6 +12,11 @@ export function getRating(page) {
 //Создание таблички с историей получения оценок
 function CreateRatingTable(data) {
     //Блок куда буде выведен список
+    if(page == 1 && data.length == 0){
+        NoneRating();
+        load('body','Готово',false);
+        return true;
+    }
     let ratingTable = document.querySelector('#ratingtable');
     for (var i = 0; i < data.length; i++) {
         let li = document.createElement('li');//Создания строки таблички
@@ -34,6 +39,11 @@ function CreateRatingTable(data) {
     }
     load('body', 'Загрузка статистики', false)
 }
+function NoneRating(){
+    let block = document.querySelector('#rating_history');
+    block.innerHTML = '<h2 class = "margin10" style = "text-align:center;">У вас пока не одной оценки</h2>'
+}
+
 let page = 1;
 document.querySelector('#more').onclick = () => {
     getRating(page);
