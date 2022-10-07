@@ -39,7 +39,12 @@
                 <button class="nav-link active btn-outline-info" id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">
-                    Статистика
+                    Главная
+                </button>
+                <button class="nav-link btn-outline-info" id="v-pills-ratings-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-ratings" type="button" role="tab" aria-controls="v-pills-ratings"
+                    aria-selected="true">
+                    Оценки
                 </button>
                 <button class="nav-link" id="v-pills-hours-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-hours" type="button" role="tab" aria-controls="v-pills-hours"
@@ -51,11 +56,6 @@
                     aria-selected="false">
                     Зачетка
                 </button>
-                {{-- <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
-                    aria-selected="false">
-                    Рассылка
-                </button> --}}
             </div>
             <div class="tab-content container-fluid" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
@@ -71,6 +71,12 @@
                 <div class="tab-pane fade" id="v-pills-records" role="tabpanel" aria-labelledby="v-pills-records-tab"
                     tabindex="0" style = 'width:100%'>
                     @include('student.components.recordbook')
+                </div>
+            </div>
+            <div class="tab-content container-fluid" id="v-pills-tabContent">
+                <div class="tab-pane fade" id="v-pills-ratings" role="tabpanel" aria-labelledby="v-pills-ratings-tab"
+                    tabindex="0" style = 'width:100%'>
+                    @include('student.components.historyrating')
                 </div>
             </div>
             {{--

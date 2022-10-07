@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
-    <div class="container-fluid" style='width:94%'>
+    <div class="container-fluid zero-padding" style='width:94%'>
         <div class="container-fluid">
             <h2>Оставшиеся часы</h2>
         </div>

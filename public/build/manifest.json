@@ -17,7 +17,7 @@
     ]
   },
   "resources/js/student/app.js": {
-    "file": "assets/app.52ad8331.js",
+    "file": "assets/app.ad601cb4.js",
     "src": "resources/js/student/app.js",
     "isEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     "file": "assets/load.6385fe31.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app.2085962b.css",
+    "file": "assets/app.55e8efd8.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }
