@@ -17,4 +17,5 @@
             </li>
         </ul>
     </div>
+    @include('student.components.telegramcode')
 </div>

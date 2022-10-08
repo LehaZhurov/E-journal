@@ -1,6 +1,6 @@
-<div class="container-fluid ">
-    <h2>Телеграмм</h2>
-    <div class="container-fluid" style='width:96%'>
+<div class="container-fluid zero-padding">
+    <h2 class = 'margin10'>Телеграмм</h2>
+    <div class="container-fluid zero-padding">
         <form action="#" name='tgcodeform' class='d-flex' id='tgcodeform'>
             <input type="text" name='user_id' id='user_id' value="{{ $user->id }}" class='d-none'>
             <ul class="list-group list-group-flush flex-column">
