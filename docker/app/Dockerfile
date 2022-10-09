@@ -14,7 +14,12 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y libpq-dev \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
-
+#Zip
+#Install Zip
+RUN apt-get update && \
+     apt-get install -y \
+         libzip-dev \
+         && docker-php-ext-install zip
 # DEPENDENCIES
 RUN apt-get update --fix-missing \
     && apt-get install -y  python \

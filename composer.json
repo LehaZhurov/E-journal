@@ -13,7 +13,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "lee-to/moonshine": "^1.7",
-        "shuchkin/simplexlsxgen": "^1.2"
+        "phpoffice/phpspreadsheet": "^1.23"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",

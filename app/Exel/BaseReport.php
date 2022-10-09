@@ -2,27 +2,33 @@
 
 namespace App\Exel;
 
-use Shuchkin\SimpleXLSXGen;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 abstract class BaseReport
 {
 
-    const REALPATH = "../../storage/app/public/exelrepot/";
-    const DOWNLOADPATH = '/exelreport\/';
-    public function generate(array $data): BaseReport
+    const REALPATH = "./../storage/app/public/exelreport/reports/";
+    const DOWNLOADPATH = "/exelreport\/reports\/";
+    const EXAMPLEFILE = './../storage/app/public/exelreport/ex/ex.xlsx';
+
+    public function __construct()
     {
-        $this->XLS = SimpleXLSXGen::fromArray($data);
-        return $this;
+        $this->spreadsheet = IOFactory::load($this::EXAMPLEFILE);
     }
 
-    public function save(string $nameFile)
+    public function spreadsheet(): Spreadsheet
     {
-        $filePath = $this->REALPATH . $nameFile . "xlsx";
-        $result = $this->saveAs($filePath);
-        if ($result != true) {
-            return false;
-        }
-        return $this->DOWNLOADPATH . $nameFile;
+        $this->spreadsheet = new Spreadsheet();
+        return $this->spreadsheet;
+    }
+
+    public function save(Spreadsheet $spreadsheet, string $nameFile)
+    {
+        $writer = new Xlsx($spreadsheet);
+        $writer->save($this::REALPATH . $nameFile . ".xlsx");
+        return $this::DOWNLOADPATH;
     }
 
 }
