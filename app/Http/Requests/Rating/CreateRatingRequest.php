@@ -25,7 +25,7 @@ class CreateRatingRequest extends FormRequest
     public function rules()
     {
         return [
-            'value' => ['required', 'string', Rule::in([5,4,3,2,'нб'])],
+            'value' => ['required', 'string', Rule::in([5,4,3,2,'нб','н','уп'])],
             'user_id' => ['required', 'int'],
             'teacher_id' => [],
             'subject_id' => ['required', 'int'],
