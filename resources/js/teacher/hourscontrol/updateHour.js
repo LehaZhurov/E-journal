@@ -3,7 +3,7 @@ import { load } from '../../load.js';
 import { getHour } from '../hourscontrol/getHour';
 
 
-
+//Функия для списывания часов
 export function updateHour(data){
     load('body','Списываю часы',true);
     SendRequest('POST', 'patch/hour',data)

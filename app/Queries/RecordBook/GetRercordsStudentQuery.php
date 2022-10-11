@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 class GetRercordsStudentQuery
 {
 
+    //Возврощате список аттестаций определенного студента
     public static function find(int $studentId): Collection | array
     {
         $records = RecordBook::query()

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class GetStudentRatingQuery
 {
-    //Возврощате список оценок
+    //Возврощате список оценок студента
     public static function find(int $studentId, int $page): Collection | array
     {
         $limit = 40;

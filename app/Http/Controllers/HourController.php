@@ -8,6 +8,7 @@ use App\Http\Resources\Hour\HourResource;
 
 class HourController extends Controller
 {
+    //Метод для списания часов
     public function patch(PatchHourRequest $request)
     {
         $groupId = $request->get('group');

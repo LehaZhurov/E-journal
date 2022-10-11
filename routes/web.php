@@ -14,19 +14,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    // $role = null;
-    // if (Auth::check()) {
-    //     $role = Auth::user()->role()->first()->name;
-    // } else {
-    //     return view('auth.login');
-    // }
-    // if ($role == 'teacher') {
-    //     return redirect('/teacher/cabinet');
-    // } elseif ($role == 'student') {
-    //     return 'Кабинет студента';
-    // }else{
-    //     return view('auth.login');
-    // }
     return view('welcome');
 });
 

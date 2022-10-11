@@ -7,7 +7,7 @@ import { deleteRecord } from './deleteRecord';
 
 
 
-
+//Получение списка аттестаций
 export function getRecords(groupId) {
     SendRequest('GET', 'attestation/get/' + groupId)
         .then(data => CreateRecordsTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
