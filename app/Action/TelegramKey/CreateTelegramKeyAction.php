@@ -6,8 +6,8 @@ use App\Models\TelegramKey;
 
 class CreateTelegramKeyAction
 {
-
-    public static function execute(int $userId, int $key): TelegramKey
+    //Создает запись о новом телеграм ключе
+    public static function execute(int $userId, int $key): TelegramKey 
     {
         $newKey = new TelegramKey();
         $newKey->chat_id = $key;

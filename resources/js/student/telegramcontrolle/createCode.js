@@ -1,6 +1,7 @@
 import { SendRequest } from '../../SendRequest.js';
 import { Alert } from '../../Alert.js';
 
+//Функция создания ключа
 export function createCode(data) {
     SendRequest('POST', 'create/code', data)
         .then(data => createSuccess())//Передаем сообщение от сервера
