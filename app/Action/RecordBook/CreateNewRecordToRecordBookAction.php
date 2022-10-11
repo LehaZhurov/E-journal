@@ -7,6 +7,9 @@ use App\Bot\Notifications\ResultAttestation;
 class CreateNewRecordToRecordBookAction
 {
 
+    //Создает аттестацию , но не создаст её если 
+    //она была выставлена , то вернете ранее созданую 
+    //оценку
     public static function execute(array $recordData): RecordBook
     {
         $record = RecordBook::query()

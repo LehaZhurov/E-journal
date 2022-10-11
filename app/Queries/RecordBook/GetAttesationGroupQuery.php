@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Collection;
 class GetAttesationGroupQuery
 {
 
-    public static function find(int $groupId): Collection | array
+    //Возврощате список аттестаций целой группы
+    public static function find(int $groupId, int $teacherId): Collection | array
     {
         $attestation = Group::find($groupId)
             ->join('group_subject', 'groups.id', '=', 'group_subject.group_id')
             ->join('subjects', 'group_subject.subject_id', '=', 'subjects.id')
             ->join('record_books', 'subjects.id', '=', 'record_books.subject_id')
+            ->where('record_books.teacher_id', $teacherId)
             ->join('users', 'users.id', '=', 'record_books.student_id')
             ->join('type_attestations', 'record_books.type_attestation_id', '=', 'type_attestations.id')
             ->select(

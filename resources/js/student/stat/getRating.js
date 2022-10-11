@@ -39,6 +39,7 @@ function CreateRatingTable(data) {
     }
     load('body', 'Загрузка статистики', false)
 }
+//Вывод в том случае если нет оценкок
 function NoneRating(){
     let block = document.querySelector('#rating_history');
     block.innerHTML = '<h2 class = "margin10" style = "text-align:center;">У вас пока не одной оценки</h2>'

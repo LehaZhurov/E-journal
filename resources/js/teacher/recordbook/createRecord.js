@@ -2,7 +2,7 @@ import { SendRequest } from '../../SendRequest.js';
 import { Alert } from '../../Alert.js';
 import { getRecords } from './getRecords';
 
-
+//Функция для создания атестации
 function createRecord() {
     let formRecord = document.querySelector('#record');
     let data = new FormData(formRecord);

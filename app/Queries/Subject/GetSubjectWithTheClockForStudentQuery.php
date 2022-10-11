@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 class GetSubjectWithTheClockForStudentQuery
 {
 
+    //Возрощате список преметов с часами которые есть у его группы
     public static function find(int $studentId): Collection | array
     {
         $studentGroup = User::find($studentId)->group();

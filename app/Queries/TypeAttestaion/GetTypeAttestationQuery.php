@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 class GetTypeAttestationQuery
 {
 
-    //Возвращает список тип аттестаций
+    //Возвращает список типов аттестаций
     public static function find(): Collection
     {
         return TypeAttestation::query()->get();
