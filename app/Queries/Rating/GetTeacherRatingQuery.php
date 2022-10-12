@@ -21,6 +21,7 @@ class GetTeacherRatingQuery
             $userRatings[$user->id]['ratings'] =
             $user->ratings()
                 ->where('num_month', $param['month'])
+                ->where('year', $param['year'])
                 ->where('subject_id', $param['subject'])
                 ->orderBy('num_day')
                 ->get();
