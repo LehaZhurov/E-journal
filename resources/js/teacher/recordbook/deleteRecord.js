@@ -3,6 +3,8 @@ import { Alert } from '../../Alert.js';
 import { load } from '../../load.js';
 import { getRecords } from './getRecords';
 
+
+//Функция для удаления аттестации
 export function deleteRecord(id) {
     load('body', 'Удаляю', true)
     SendRequest('GET', 'attestation/delete/' + id)

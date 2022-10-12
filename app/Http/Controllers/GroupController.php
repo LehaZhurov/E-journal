@@ -15,7 +15,7 @@ class GroupController extends Controller
         $subjects = GetSubjectsGroupForTeacherQuery::find($groupId,$teacherId);
         return SubjectResource::collection($subjects);
     }
-
+    //Метод вернет список участников группы по id
     public function getUsers(int $groupId) {
         $users = GetUsersGroupQuery::find($groupId);
         return UserResource::collection($users);

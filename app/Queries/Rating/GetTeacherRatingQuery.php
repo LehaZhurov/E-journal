@@ -12,7 +12,6 @@ class GetTeacherRatingQuery
     {
         $group = Group::query()->where('id', $param['group'])->with('users')->first();
         $users = $group->users()->get()->all();
-        // dd($userIds);
         $userRatings = [];
         foreach ($users as $user) {
             $userRatings[$user->id]['user'] = collect([
@@ -22,6 +21,7 @@ class GetTeacherRatingQuery
             $userRatings[$user->id]['ratings'] =
             $user->ratings()
                 ->where('num_month', $param['month'])
+                ->where('year', $param['year'])
                 ->where('subject_id', $param['subject'])
                 ->orderBy('num_day')
                 ->get();

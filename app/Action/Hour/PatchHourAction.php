@@ -5,7 +5,10 @@ use App\Models\Hour;
 
 class PatchHourAction
 {
-
+    //метод который используется для списания часов 
+    //принимает кол-во часов которые нужно списать
+    //,id группы и id предмета у которых и по которому 
+    //нужно списать те самые часы
     public static function execute(int $hour, int $groupId, int $subjectId)
     {
         $hours = Hour::query()

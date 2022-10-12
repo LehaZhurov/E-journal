@@ -27,10 +27,12 @@ class RecordBookController extends Controller
         $result = DeleteRecordAction::execute($id);
         return new EmptyResource($result);
     }
-    //Метод возвращает список аттестаций по id группы
+    //Метод возвращает список аттестаций группы
+    //У данного преподователя
     public function attestationGroup(int $groupId)
     {
-        $attestation = GetAttesationGroupQuery::find($groupId);
+        $teacherId = Auth::user()->id;
+        $attestation = GetAttesationGroupQuery::find($groupId,$teacherId);
         return AttestationResource::collection($attestation);
     }
 }
