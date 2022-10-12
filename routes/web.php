@@ -16,7 +16,8 @@ use App\Exel\RatingsGroupForMonthReport;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    RatingsGroupForMonthReport::create(3,"01","2022");
+    // return view('welcome');
 });
 
 Route::get('/dashboard', function () {

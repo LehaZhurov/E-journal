@@ -12,6 +12,7 @@ class RatingsGroupForMonthReport extends BaseReport
     protected $groupId;
     protected $numMonth;
     protected $yaer;
+    protected $reportData;
 
     public function startGeneratigReport(int $groupId, string $numMonth, string $yaer)
     {
@@ -19,7 +20,7 @@ class RatingsGroupForMonthReport extends BaseReport
         $this->numMonth = $numMonth;
         $this->yaer = $yaer;
         $this->reportData = $this->getReportData();
-        dd($this->reportData);
+        dd($this->reportData['users'][0]);
     }
 
     protected function getReportData()

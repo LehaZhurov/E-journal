@@ -52,21 +52,22 @@ class GetRatingsOfReportForMounthQuery
             $userRatings->ratings = self::sortRatingsForSubject($userRatings->ratings);
         }
         //Выделение последний оценки по каждому предмету
+        $userKey = 0;
         foreach ($usersRatings as $userRatings) {
             //перебериаем пользователей
-            $thisRatings = [];
             foreach ($userRatings->ratings as $subject => $ratings) {
                 //Перебираем оценики пользователей
                 $thisRatings[$subject] = self::getRatingForMaxNumDay($ratings);
                 //И записивыем вместо массива оценок по этому предмету предмету
                 //Оценку которя была поставленна поже всего в месяце
             }
-            $userRatings->ratings = $thisRatings;
+            $usersRatings[$userKey]->ratings = $thisRatings;
+            $userKey++;
         }
         //Объединямем результаты работы класса в DTO
         $result = collect([
             'group' => $group,
-            'users' => $userRatings,
+            'users' => $usersRatings,
         ]);
 
         return $result;
@@ -76,7 +77,9 @@ class GetRatingsOfReportForMounthQuery
     private static function getRatingForMaxNumDay(array $ratings)
     {
         $ratings = collect($ratings);
-        return $ratings->sortBy('num_day')->last();
+        $ratings = $ratings->sortBy('num_day');
+        $lastRating = $ratings->last();
+        return $lastRating;
     }
     //Сортировка оценок по предметам
     private static function sortRatingsForSubject($ratings): SupportCollection
