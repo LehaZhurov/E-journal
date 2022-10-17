@@ -16,7 +16,7 @@ use App\Exel\RatingsGroupForMonthReport;
 */
 
 Route::get('/', function () {
-    RatingsGroupForMonthReport::create(3,"01","2022");
+    dd(RatingsGroupForMonthReport::create(3,"01","2022"));
     // return view('welcome');
 });
 

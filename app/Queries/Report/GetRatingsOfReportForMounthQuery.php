@@ -20,7 +20,6 @@ class GetRatingsOfReportForMounthQuery
             ->first();
         //Получаем пользователей
         $users = User::query()
-            ->select('users.*')
             ->where('group_id', $groupId)
             ->get();
 
@@ -46,9 +45,15 @@ class GetRatingsOfReportForMounthQuery
             ])
             ->get();
 
+        return self::prepareData($group, $users, $ratings);
+    }
+
+    private static function prepareData(Group $group, Collection $users, Collection $ratings)
+    {
         $usersRatings = self::unitRatingForUser($users, $ratings);
         //Разделение оценок по предметам
         foreach ($usersRatings as $userRatings) {
+            $userRatings->absenteeisms = self::countAbsenteeism($userRatings->ratings);
             $userRatings->ratings = self::sortRatingsForSubject($userRatings->ratings);
         }
         //Выделение последний оценки по каждому предмету
@@ -72,6 +77,29 @@ class GetRatingsOfReportForMounthQuery
 
         return $result;
     }
+
+    private static function CountAbsenteeism($ratings)
+    {
+        $countGrandAbsenteeism = 0;
+        $countPastAbsenteeism = 0;
+        $countAbsenteeism = 0;
+        foreach ($ratings as $rating) {
+            if ($rating->value == "уп") {
+                $countGrandAbsenteeism++;
+                $countAbsenteeism++;
+            } elseif ($rating->value == "нб") {
+                $countPastAbsenteeism++;
+                $countAbsenteeism++;
+            }
+        }
+        $absenteeisms = [
+            "grand_absenteeisms" => $countGrandAbsenteeism,
+            "past_absenteeisms" => $countPastAbsenteeism,
+            "all_absentees" => $countAbsenteeism,
+        ];
+        return collect($absenteeisms);
+    }
+
     //Из массива оценок возврощате оценку
     //которая является последний в месяце
     private static function getRatingForMaxNumDay(array $ratings)
