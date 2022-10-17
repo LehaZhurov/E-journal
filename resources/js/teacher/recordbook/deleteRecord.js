@@ -7,7 +7,7 @@ import { getRecords } from './getRecords';
 //Функция для удаления аттестации
 export function deleteRecord(id) {
     load('body', 'Удаляю', true)
-    SendRequest('GET', 'attestation/delete/' + id)
+    SendRequest('GET', 'delete/attestation/' + id)
         .then(data => end())//Передаем сообщение от сервера
         .catch(err => Alert('Что то пошло не так', 'error'))
     function end() {

@@ -51,6 +51,9 @@
                 <button class="nav-link" id="v-pills-recod-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recod"
                     type="button" role="tab" aria-controls="v-pills-recod" aria-selected="false">
                     Аттестация</button>
+                <button class="nav-link" id="v-pills-report-tab" data-bs-toggle="pill" data-bs-target="#v-pills-report"
+                    type="button" role="tab" aria-controls="v-pills-report" aria-selected="false">
+                    Ведомости</button>
                 {{-- <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
                     aria-selected="false">
@@ -72,6 +75,10 @@
                 <div class="tab-pane fade" id="v-pills-recod" role="tabpanel" aria-labelledby="v-pills-recod-tab"
                     tabindex="0" style='width:100%'>
                     @include('teacher.components.attestations')
+                </div>
+                <div class="tab-pane fade" id="v-pills-report" role="tabpanel" aria-labelledby="v-pills-report-tab"
+                    tabindex="0" style='width:100%'>
+                    @include('teacher.components.report')
                 </div>
             </div>
         </div>

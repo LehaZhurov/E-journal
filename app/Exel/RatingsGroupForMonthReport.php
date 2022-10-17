@@ -16,7 +16,7 @@ class RatingsGroupForMonthReport extends BaseReport
     protected $yaer;
     protected $students = [];
 
-    public function generatigReport(int $groupId, string $numMonth, string $yaer): string
+    public function generatigReport(int $groupId, string $numMonth, string $yaer): array 
     {
         $this->groupId = $groupId;
         $this->numMonth = $numMonth;
@@ -48,7 +48,11 @@ class RatingsGroupForMonthReport extends BaseReport
         }
         $this->drawSubject($subjects);
         $nameFile = "Ведомость" . $reportData['group']->group_name . "-" . $this->month . "-" . $this->yaer . "(" . date('Y-m-dH:i:s') . ")";
-        return $this->save($this->spreadsheet, $nameFile);
+        $path = $this->save($this->spreadsheet, $nameFile);
+        return [
+            'name' => $nameFile,
+            'path' => $path
+        ];
     }
     public function drawRating(int $numStudent, $ratings): void
     {
@@ -130,7 +134,7 @@ class RatingsGroupForMonthReport extends BaseReport
         );
     }
 
-    public static function create(int $groupId, string $numMonth, string $yaer): string
+    public static function create(int $groupId, string $numMonth, string $yaer): array
     {
         return (new self())->generatigReport($groupId, $numMonth, $yaer);
     }

@@ -6,7 +6,7 @@ import { getRecords } from './getRecords';
 function createRecord() {
     let formRecord = document.querySelector('#record');
     let data = new FormData(formRecord);
-    SendRequest('POST', 'attestation/create', data)
+    SendRequest('POST', 'create/attestation', data)
         .then(data => getRecords(formRecord.elements.group.value))//Передаем сообщение от сервера
         .catch(err => Alert('Что то пошло не так', 'error'))
 }

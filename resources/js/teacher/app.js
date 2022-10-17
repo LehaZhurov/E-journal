@@ -7,6 +7,7 @@ import './journalform/getrating';
 import './journalform/RatingTableConstructor';
 import './recordbook/getRecords';
 import './recordbook/createRecord'
+import './reports/report'
 import { getHour } from './hourscontrol/getHour';
 import { getRating } from './journalform/getrating';
 import { updateHour } from './hourscontrol/updateHour';
