@@ -6,7 +6,7 @@ let form = document.querySelector('#tgcodeform');
 form.ondblclick = function () {
     viewinput(true);
 }
-
+//функция отоброжения формы ввода телеграм ключа
 function viewinput(isDisplayNone) {
     let inputCode = document.querySelector('#input_code');
     let viewCode = document.querySelector('#viewcode');

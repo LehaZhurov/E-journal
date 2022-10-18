@@ -6,7 +6,7 @@ use App\Models\TelegramKey;
 
 class UpdateTelegramKeyAction
 {
-
+    //обновляет телеграм ключ
     public static function execute(int $userId, int $key): TelegramKey
     {
         $updatedKey = TelegramKey::where('user_id',$userId)->first();

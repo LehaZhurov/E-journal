@@ -7,7 +7,8 @@ use App\Queries\RecordBook\GetAttestationForNotificationQuery;
 
 class ResultAttestation
 {
-    //Отпровляет уведомление пользователю о новой оценке
+    //Отпровляет пользователю уведомление 
+    //о результате аттестации
     public static function notify($attestationId): bool
     {
         $attestation = GetAttestationForNotificationQuery::find($attestationId);

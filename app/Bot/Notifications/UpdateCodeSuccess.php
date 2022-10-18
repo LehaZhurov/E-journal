@@ -6,7 +6,7 @@ use App\Bot\TelegramBot;
 
 class UpdateCodeSuccess
 {
-    //Отпровляет уведомление пользователю о новой оценке
+    //Отпровляет уведомление об успешном обновление кода
     public static function notify(int $chatId): bool
     {
         $telegramKey = env('TELEGRAM_KEY');

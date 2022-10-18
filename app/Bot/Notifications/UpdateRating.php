@@ -7,7 +7,8 @@ use App\Queries\Rating\GetRatingForNotificationsQuery;
 
 class UpdateRating
 {
-    //Отпровляет уведомление пользователю о новой оценке
+    //Отпровляет уведомление пользователю 
+    //Об измение его оценки
     public static function notify($ratingId): bool
     {
         $rating = GetRatingForNotificationsQuery::find($ratingId);
