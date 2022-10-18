@@ -23,3 +23,4 @@ Route::get('get/attestation/{groupId}', [RecordBookController::class, 'attestati
 Route::get('delete/attestation/{id}', [RecordBookController::class, 'delete'])->name('teacher.deleteRecord');
 Route::post('create/report', [ReportController::class, 'create'])->name('teacher.createReport');
 Route::get('download/report/{url}', [ReportController::class, 'download'])->name('teacher.downloadReport');
+Route::post('get/report', [ReportController::class, 'get'])->name('teacher.getReport');

@@ -229,7 +229,9 @@ option:checked {
 .slogan {
     font-size: 30px;
 }
-
+.file > a{
+    color: var(--bg-green);
+}
 * {
     scrollbar-width: thin;
     scrollbar-color: #fff var(--bg-green);

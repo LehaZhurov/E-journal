@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Exel\RatingsGroupForMonthReport;
 use App\Http\Requests\Report\CreateReportRequest;
+use App\Http\Requests\Report\GetReportRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Action\Report\CreateReportAction;
 use App\Http\Resources\Report\ReportResource;
+use App\Queries\Report\GetReportsQuery;
 class ReportController extends Controller
 {
     public function create(CreateReportRequest $request){
@@ -21,6 +23,12 @@ class ReportController extends Controller
         return new ReportResource($report);
     }
     
+    public function get(GetReportRequest $request){
+        $groupId = $request->get('group');
+        $year = $request->get('year'); 
+        $reports = GetReportsQuery::find($groupId,$year);
+        return ReportResource::collection($reports);
+    }
    
         
 }

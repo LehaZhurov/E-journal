@@ -1,12 +1,12 @@
 import { setYearsForm } from '../journalform/setYearForm';
 import { createReport } from './createReport';
-
+import { getReport } from './getReport';
 
 let year = document.querySelector('#years_select_report');
 setYearsForm(year);
+getReport('#report_form');
 
 document.querySelector('#createreportbtn').onclick = () => {
-    let form = document.querySelector('#report_form');
-    form = new FormData(form);
-    createReport(form);
+    createReport('#report_form');
 }
+

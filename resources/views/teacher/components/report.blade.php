@@ -44,13 +44,13 @@
     <div class="container-fluid">
         <h2>Ведомости</h2>
     </div>
-    <div class="container-fluid ">
+    <div class="container-fluid" id = 'parent_block_report'>
         <ul class="list-group container-fluid zero-padding">
             <li class="list-group-item d-flex row container-fluid hourstableheader" >
                 <span class  = "col">Файл</span>
             </li>
         </ul>
-        <ul class="tablestat list-group container-fluid zero-padding" id = 'hourstable'>
+        <ul class="tablestat list-group container-fluid zero-padding" id = 'reportstable'>
             
         </ul>
     </div>

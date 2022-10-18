@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Exel\RatingsGroupForMonthReport;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +11,10 @@ use App\Exel\RatingsGroupForMonthReport;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
-    dd(RatingsGroupForMonthReport::create(3,"01","2022"));
-    // return view('welcome');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
