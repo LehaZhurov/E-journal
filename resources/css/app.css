@@ -26,6 +26,13 @@ h2 {
     margin-left: 15px;
     font-size: 25px;
 }
+#logo{
+    display: flex;
+    flex-direction: column;
+}
+#logo > span{
+    font-size:15px;
+}
 .margin10{
     margin-top:10px;
     margin-bottom: 10px;
@@ -287,13 +294,29 @@ option:checked {
         box-shadow: none;
         min-height: 400px;
     }
-
-    
-
+    .tabbtn > span{
+        display: none;
+    }
+    .tabbtn > i{
+        font-size:20px;
+    }
+    .tabmenu{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        justify-content: space-around;
+        z-index: 10000;
+        margin-top: 40px;
+    }
+    .tabmenu > button{
+        flex-grow:1;
+    }
+    .content{
+        margin-bottom: 50px;
+    }
     #loginhref {
         width: 80%;
     }
-
     .slogan {
         font-size: 15px;
     }

@@ -7,7 +7,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css']
+    )
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>E-journal</title>
 </head>
 
@@ -34,27 +36,31 @@
             </div>
         </nav>
         <div class="d-flex justify-content-end flex-column" id='journal_page'>
-            <div class="nav flex-row nav-pills me-12 mr-auto" id="v-pills-tab" role="tablist"
+            <div class="nav flex-row nav-pills me-12 mr-auto tabmenu" id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
-                <button class="nav-link active btn-outline-info" id="v-pills-home-tab" data-bs-toggle="pill"
+                <button class="nav-link active btn-outline-info tabbtn" id="v-pills-home-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
                     aria-selected="true">
-                    Главная
+                    <span>Главная</span>
+                    <i class='bx bxs-user-rectangle' ></i>
                 </button>
-                <button class="nav-link btn-outline-info" id="v-pills-ratings-tab" data-bs-toggle="pill"
+                <button class="nav-link btn-outline-info tabbtn" id="v-pills-ratings-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-ratings" type="button" role="tab" aria-controls="v-pills-ratings"
                     aria-selected="true">
-                    Оценки
+                    <span>Оценки</span>
+                    <i class='bx bx-line-chart'></i>
                 </button>
-                <button class="nav-link" id="v-pills-hours-tab" data-bs-toggle="pill"
+                <button class="nav-link tabbtn" id="v-pills-hours-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-hours" type="button" role="tab" aria-controls="v-pills-hours"
                     aria-selected="false">
-                    Часы
+                    <span>Часы</span>
+                    <i class='bx bx-hourglass' ></i>
                 </button>
-                <button class="nav-link" id="v-pills-records-tab" data-bs-toggle="pill"
+                <button class="nav-link tabbtn" id="v-pills-records-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-records" type="button" role="tab" aria-controls="v-pills-records"
                     aria-selected="false">
-                    Зачетка
+                    <span>Зачетка</span>
+                    <i class='bx bx-check-square' ></i>
                 </button>
             </div>
             <div class="tab-content container-fluid" id="v-pills-tabContent">
