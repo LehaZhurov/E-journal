@@ -30,5 +30,8 @@ class ReportController extends Controller
         return ReportResource::collection($reports);
     }
    
+    public function download($url){
+        dd(Storage::allFiles());  
+    }
         
 }

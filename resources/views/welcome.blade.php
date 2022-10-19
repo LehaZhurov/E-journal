@@ -15,7 +15,7 @@
 <body id='body'>
     <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
         <img src="{{ asset('/storage/img/logo.png') }}" alt="">
-        <h1 class='slogan'>Современный-Молодёжный-Электронный журнал</h1>
+        <h1 class='slogan text-center'>Современный-Молодёжный-Электронный журнал</h1>
         @auth
             <a href="/teacher/cabinet" id="loginhref">Войти</a>
         @endauth
@@ -24,7 +24,7 @@
             <a href="/login" id="loginhref">Войти</a>
         @endguest
         <span style="position: fixed;bottom:0;">
-            v 1.0.1
+            v 1.0.2
             made leha 
             <i class='bx bxs-cat' ></i>
             2022-10-18 / 

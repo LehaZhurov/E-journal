@@ -1,7 +1,10 @@
 <div class="d-flex justify-content-center flex-column align-items-center">
     <div class="container-fluid" style='width:94%'>
         <div class="container-fluid zero-padding">
-            @if(!$records)
+            @php
+                $count = count($records);
+            @endphp
+            @if($count > 0)
             <ul class="list-group container-fluid">
                 <li class="list-group-item d-flex row container-fluid hourstableheader">
                     <span class="col text-center">Предмет</span>

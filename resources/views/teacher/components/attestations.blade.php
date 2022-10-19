@@ -33,7 +33,7 @@
             </select>
             <button class="btn bg-green" type='button' id='createrecordbtn'>Выставить</button>
         </form>
-        <div class="container-fluid">
+        <div class="container-fluid mt-2">
             <h2>Список аттестаций <span id="groupnamerecord">группы</span></h2>
             <div id="HourHelpBlock" class="form-text">
                 Удалить аттестацию можно дважды кликнув на неё

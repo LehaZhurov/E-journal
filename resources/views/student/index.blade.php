@@ -17,7 +17,10 @@
     <div id="work_obl" class='conatiner-fluid'>
         <nav class="navbar navbar-expand-lg nav-pills nav-fill-green bg-green">
             <div class="container-fluid mg-5">
-                <a class="navbar-brand text-light" href="#">E-journal</a>
+                <a class="navbar-brand text-light" href="#" id = "logo">E-journal 
+                    <span>
+                        made leha <i class='bx bxs-cat' ></i>
+                    </span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">

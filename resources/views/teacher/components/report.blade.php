@@ -41,7 +41,7 @@
     <button class="btn bg-green" type='button' id='createreportbtn'>Создать</button>
     </form>
     
-    <div class="container-fluid">
+    <div class="container-fluid mt-2">
         <h2>Ведомости</h2>
     </div>
     <div class="container-fluid" id = 'parent_block_report'>

@@ -21,7 +21,7 @@
             </select>
             <button class="btn bg-green" type='button' id='writeoffhoursbtn'>Списать</button>
         </form>
-        <div class="container-fluid">
+        <div class="container-fluid mt-2 text-center">
             <h2>Оставшиеся часы</h2>
         </div>
         <div class="container-fluid ">
