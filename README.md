@@ -5,7 +5,7 @@
 
 ## Потрогать
 
-Посмотреть проект можно адресу [http://cllctrfrm.tw-team.com/](http://cllctrfrm.tw-team.com/).Данные для входа можно найти в [админ](http://cllctrfrm.tw-team.com/moonshine/login) панели.
+Посмотреть проект можно адресу [http://cllctrfrm.tw-team.com/](http://cllctrfrm.tw-team.com/).Данные для входа можно найти в [админ](http://cllctrfrm.tw-team.com/moonshine/login) панели.Данные для входа в админку:leha@mail.ru/lehaleha
 
 ## Описание
 
