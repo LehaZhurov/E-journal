@@ -42,8 +42,8 @@ export function getRating() {
     load('body', 'Загрузка оценок\nДата:' + month.value + '.' + year.value, true);
     let formData = new FormData(data_form);//Создаем объект FormData и передаем в него данные из формы
     SendRequest('POST', 'get/rating', formData)
-        .then(data => GenerateTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'));
+        .then(data => GenerateTable(data['data']))//Передаем сообщение от сервера
+        .catch(err => Alert(err, 'error'));
 }
 
 let TableConstructor;

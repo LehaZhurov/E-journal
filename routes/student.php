@@ -5,7 +5,6 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TelegramKeyController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('cabinet',                      [StudentController::class, 'index'])->name('student.cabinet');
 Route::post('get/rating/{page}',           [StudentController::class, 'getRating'])->name('student.getRating');
 Route::get('get/hours',                    [SubjectController::class, 'getSubjectForStudent'])->name('student.getHour');
 Route::post('update/code',                  [TelegramKeyController::class, 'update'])->name('student.updateCode');

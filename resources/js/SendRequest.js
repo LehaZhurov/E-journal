@@ -5,6 +5,7 @@ export function SendRequest(method, url, body = null, debug = true) {
 	return new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
 		xhr.open(method, url, true)
+		xhr.responseType = 'json';
 		xhr.withCredentials = true;
 		xhr.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content)
 		if (xhr.readyState == 1 && debug) {

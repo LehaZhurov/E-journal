@@ -9,7 +9,7 @@ export function deleteRecord(id) {
     load('body', 'Удаляю', true)
     SendRequest('GET', 'delete/attestation/' + id)
         .then(data => end())//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .catch(err => Alert(err, 'error'))
     function end() {
         Alert('Удаленно');
         load('body', 'Удаленно', false)

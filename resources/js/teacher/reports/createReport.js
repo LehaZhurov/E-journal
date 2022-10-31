@@ -7,7 +7,7 @@ export function createReport(id) {
     form = new FormData(form);
     SendRequest('POST', 'create/report', form)
         .then(data => reportCreate(data))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'));
+        .catch(err => Alert(err, 'error'));
     
 }
 

@@ -9,8 +9,8 @@ import { Alert } from '../../Alert.js';
 export function getSubjectsGroup(id, block) {
     load('body', 'Подгружаю список предметов', true)
     SendRequest('GET', 'get/subjects_group/' + id)
-        .then(data => updateSubjectsList(JSON.parse(data)['data'], block))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .then(data => updateSubjectsList(data['data'], block))//Передаем сообщение от сервера
+        .catch(err => Alert(err, 'error'))
 }
 
 //Вывод списка предметов с сервера

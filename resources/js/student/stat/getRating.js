@@ -6,7 +6,7 @@ import { Alert } from '../../Alert'
 export function getRating(page) {
     load('body', 'Загрузка статистики', true)
     SendRequest('POST', 'get/rating/' + page)
-        .then(data => CreateRatingTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
+        .then(data => CreateRatingTable(data['data']))//Передаем сообщение от сервера
         .catch(err => Alert('Что то пошло не так', 'error'));
 }
 //Создание таблички с историей получения оценок

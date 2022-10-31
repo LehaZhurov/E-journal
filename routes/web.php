@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Кабинет преподователя
+Route::get('teacher/cabinet', [TeacherController::class, 'index'])->name('teacher.cabinet');
+//Кабинет студента
+Route::get('student/cabinet',[StudentController::class, 'index'])->name('student.cabinet');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

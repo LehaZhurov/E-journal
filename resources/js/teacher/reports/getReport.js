@@ -12,7 +12,7 @@ export function getReport(id) {
     load('body', 'Подгружаю ведомости', true);
     SendRequest('POST', 'get/report', form)
         .then(data => prepareData(data))//Передаем сообщение от сервера
-        .catch(err => console.log(err));
+        .catch(err => err => Alert(err, 'error'));
 }
 
 year.addEventListener('change', function () {
@@ -25,7 +25,7 @@ group.addEventListener('change', function () {
 
 
 function prepareData(data) {
-    let array = JSON.parse(data)['data'];
+    let array = data['data'];
     let groupName = group.options[group.selectedIndex].text;
     let yearValue = year.options[year.selectedIndex].text;
     let lenght = array.length

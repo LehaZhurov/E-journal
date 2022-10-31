@@ -5,7 +5,7 @@ import { Alert } from '../../Alert.js';
 export function createCode(data) {
     SendRequest('POST', 'create/code', data)
         .then(data => createSuccess())//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .catch(err => Alert(err, 'error'))
 }
 
 function createSuccess() {

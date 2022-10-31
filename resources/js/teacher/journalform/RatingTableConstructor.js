@@ -152,20 +152,19 @@ export let RatingTableConstructor = class {
 
     //Вывод сетки оценок с пользователя
     AppendRatings(UserRatings = this.UserRatings) {
-        for (let i = 0; i < UserRatings.length; i++) {
+        for (let i = 0; i < UserRatings.length ; i++) {
             let stringId = 'rating_string_num' + i;//id строки где хранатся оценки пользователя
             this.journal.innerHTML += '<ul class="list-group list-group-horizontal-sm flex-row" id = "' + stringId + '"></ul>';
             let tableString = document.querySelector('#' + stringId);
             tableString.innerHTML += this.getItemTable(UserRatings[i]['name'], '300px');//Вывод имеени
             let userId = UserRatings[i]['id']
             //Вывод строки с оценками данного пользователя
-            for (let j = 0; j <= this.tableSize; j++) {//Перебор оценок пользователя
+            for (let j = 0; j <= this.tableSize ; j++) {//Перебор оценок пользователя
                 let rating = UserRatings[i]['ratings'][j];
                 if (typeof (rating) !== 'undefined') {//Если запись о оценки с индксом j cущ-ет 
                     //Вывод оценки 
                     tableString.innerHTML += this.getItemTableForm(rating, userId);
                 } else {
-                    rating = [];
                     tableString.innerHTML += this.getItemTable();
                 }
             }
@@ -228,7 +227,7 @@ export let RatingTableConstructor = class {
     //Функция для добавления функции к блоку
     appendFunction(className, fun) {
         let blocks = document.querySelectorAll('.' + className);
-        for (var i = 0; i < blocks.length - 1; i++) {
+        for (var i = 0; i < blocks.length; i++) {
             let block = blocks[i];
             block.ondblclick = function () {
                 fun(this);

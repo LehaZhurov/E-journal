@@ -9,8 +9,8 @@ import { Alert } from '../../Alert.js';
 export function getUsersGroup(id, block) {
     load('body', 'Подгружаю список cтудентов', true)
     SendRequest('GET', 'get/users_group/' + id)
-        .then(data => updateUserssList(JSON.parse(data)['data'], block))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .then(data => updateUserssList(data['data'], block))//Передаем сообщение от сервера
+        .catch(err => Alert(err, 'error'))
 }
 
 //Вывод списка предметов с сервера

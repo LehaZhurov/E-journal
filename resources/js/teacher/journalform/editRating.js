@@ -45,17 +45,17 @@ export const EditRating = function (block) {
 //СОздание новой оценки
 function createRating(form) {
     let dataForm = new FormData(form);
-    SendRequest('POST', 'create/rating', dataForm)
-        .then(data => AddIdToTheRatingForm(JSON.parse(data)['data'], form))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+    SendRequest('POST', 'teacher/create/rating', dataForm)
+        .then(data => AddIdToTheRatingForm(data['data'], form))//Передаем сообщение от сервера
+        .catch(err => Alert(err, 'error'))
     appendNewRating(form);
 }
 //Удаление оценки
 function DeleteRating(form) {
     let dataForm = new FormData(form);
-    SendRequest('POST', 'delete/rating', dataForm)
+    SendRequest('POST', 'teacher/delete/rating', dataForm)
         .then(data => Alert('Оценка успешно удалена'))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .catch(err => Alert(err, 'error'))
     appendNewRating(form);
 }
 //Обновление оценки
@@ -63,7 +63,7 @@ function updateRating(form) {
     let dataForm = new FormData(form);
     SendRequest('POST', 'update/rating', dataForm)
         .then(data => Alert('Оценка обновлена', 'success'))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .catch(err => Alert(err, 'error'))
     appendNewRating(form);
 
 }

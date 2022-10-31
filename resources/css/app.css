@@ -158,8 +158,8 @@ option:checked {
 }
 
 #alertblock {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    bottom: 20px;
     right: 20px;
     z-index: 1000;
 }

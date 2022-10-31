@@ -10,8 +10,8 @@ import { deleteRecord } from './deleteRecord';
 //Получение списка аттестаций
 export function getRecords(groupId) {
     SendRequest('GET', 'get/attestation/' + groupId)
-        .then(data => CreateRecordsTable(JSON.parse(data)['data']))//Передаем сообщение от сервера
-        .catch(err => Alert('Что то пошло не так', 'error'))
+        .then(data => CreateRecordsTable(data['data']))//Передаем сообщение от сервера
+        .catch(err => Alert(err, 'error'))
 }
 
 //Создание таблички с аттестациями
