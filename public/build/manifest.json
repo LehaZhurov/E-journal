@@ -8,31 +8,31 @@
     ]
   },
   "resources/js/teacher/app.js": {
-    "file": "assets/app.512b1cf0.js",
+    "file": "assets/app.6254bead.js",
     "src": "resources/js/teacher/app.js",
     "isEntry": true,
     "imports": [
       "_module.esm.ff9cc1d2.js",
-      "_load.f2ae5b0b.js"
+      "_load.6159578f.js"
     ]
   },
   "resources/js/student/app.js": {
-    "file": "assets/app.d33237ac.js",
+    "file": "assets/app.c5406a85.js",
     "src": "resources/js/student/app.js",
     "isEntry": true,
     "imports": [
       "_module.esm.ff9cc1d2.js",
-      "_load.f2ae5b0b.js"
+      "_load.6159578f.js"
     ]
   },
   "_module.esm.ff9cc1d2.js": {
     "file": "assets/module.esm.ff9cc1d2.js"
   },
-  "_load.f2ae5b0b.js": {
-    "file": "assets/load.f2ae5b0b.js"
+  "_load.6159578f.js": {
+    "file": "assets/load.6159578f.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app.88ed015a.css",
+    "file": "assets/app.e92945f9.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }

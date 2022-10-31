@@ -24,7 +24,7 @@
             <a href="/login" id="loginhref">Войти</a>
         @endguest
         <span style="position: fixed;bottom:0;">
-            v 1.0.2
+            v 1.0.3
             made leha 
             <i class='bx bxs-cat' ></i>
             2022-10-18 / 
